@@ -17,7 +17,7 @@ function initParticles() {
                 shape: {
                     type: ['circle', 'image'],
                     image: {
-                        src: 'daisy.svg',  // Remove leading slash
+                        src: 'public/daisy.svg',  // Corregida la ruta de la imagen
                         width: 100,
                         height: 100
                     }

@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
         particlesJS('particles-js', {
             particles: {
                 number: {
-                    value: 180,
+                    value: 280,
                     density: {
                         enable: true,
                         value_area: 800
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         nb_sides: 5
                     },
                     image: {
-                        src: "https://galiacumple3.netlify.app/img/daisy.png",
+                        src: "public/daisy.png",
                         width: 100,
                         height: 100
                     }
@@ -114,5 +114,5 @@ document.addEventListener('DOMContentLoaded', function() {
             retina_detect: true
         });
     }
-
+    
 });
