@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     try {
-        initParticles();
         initCountdown();
         setupModalInteractions();
     } catch (error) {
@@ -8,38 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-function initParticles() {
-    if (window.particlesJS) {
-        particlesJS('particles-js', {
-            particles: {
-                number: { value: 50 },
-                color: { value: '#ccd5ae' },
-                shape: {
-                    type: ['circle', 'image'],
-                    image: {
-                        src: 'public/daisy.svg',  // Corregida la ruta de la imagen
-                        width: 100,
-                        height: 100
-                    }
-                },
-                opacity: { value: 0.5 },
-                size: { value: 15 },
-                move: {
-                    enable: true,
-                    speed: 1,
-                    direction: 'none',
-                    random: true
-                }
-            },
-            interactivity: {
-                events: {
-                    onhover: { enable: true, mode: 'bubble' },
-                    onclick: { enable: true, mode: 'repulse' }
-                }
-            }
-        });
-    }
-}
 
 function initCountdown() {
     const eventDate = new Date('2025-05-10T13:00:00').getTime();
@@ -54,11 +21,33 @@ function initCountdown() {
         const now = new Date().getTime();
         const distance = eventDate - now;
 
+        // Si el evento ya pasó
+        if (distance < 0) {
+            Object.values(countdownElements).forEach(el => {
+                if (el) el.textContent = '00';
+            });
+            return;
+        }
+
         if (Object.values(countdownElements).every(el => el)) {
-            countdownElements.days.textContent = Math.floor(distance / (1000 * 60 * 60 * 24));
-            countdownElements.hours.textContent = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            countdownElements.minutes.textContent = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            countdownElements.seconds.textContent = Math.floor((distance % (1000 * 60)) / 1000);
+            // Calcular los valores
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Actualizar con formato de dos dígitos
+            countdownElements.days.textContent = days.toString().padStart(2, '0');
+            countdownElements.hours.textContent = hours.toString().padStart(2, '0');
+            countdownElements.minutes.textContent = minutes.toString().padStart(2, '0');
+            countdownElements.seconds.textContent = seconds.toString().padStart(2, '0');
+
+            // Agregar animación cuando cambian los números
+            Object.values(countdownElements).forEach(el => {
+                el.classList.remove('number-change');
+                void el.offsetWidth; // Forzar reflow
+                el.classList.add('number-change');
+            });
         }
     }
 

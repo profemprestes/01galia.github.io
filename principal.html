@@ -46,20 +46,21 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/principal.css">
-    <link rel="stylesheet" href="css/hero.css">
     <link rel="stylesheet" href="css/particles.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/countdown.css">
     <link rel="stylesheet" href="css/details.css">
-    <link rel="stylesheet" href="css/modalconfirmar.css">
+
     
     <!-- Deferred Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
     <script src="js/hero-particles.js" defer></script>
-    <script src="js/principal.js" defer></script>
+    <script src="js/hero.js" defer></script>
     <script src="js/modalconfirmar.js" defer></script>
     <script src="js/details.js" defer></script>
+    <script src="js/principal.js" defer></script>
 </head>
 <body>
     <!-- Particles Background -->
@@ -88,8 +89,8 @@
                         ¡Acompáñame a celebrar!
                     </h2>
                     <h1 id="hero-title" class="animate__animated animate__fadeInUp animate__delay-1s">
-                        Soy Galia<br>
-                        Cumplo mi primer añito
+                        Mi primer añito <br>
+                        ¡Galia!
                     </h1>
                 </div>
                 
@@ -137,21 +138,25 @@
                 </section>
             </div>
         </section>
-
-        <section id="details-section" class="principal-date-container">
+<!--Details-->
+        <section id="details-section" class="principal-date-container" aria-labelledby="fiesta-title">
             <div class="flower-decoration">
-                <img class="flower-icon" alt="icono margarita" src="public/daisy.png">
+                <img class="flower-icon" alt="Decoración de margarita" src="public/daisy.png" aria-hidden="true">
             </div>
             <div class="title-container">
-                <h2 class="text-center text-5xl md:text-6xl font-['Baloo_2',_cursive] text-soft-ochre">Mi Fiesta</h2>
+                <h2 id="fiesta-title" class="text-center">Mi Fiesta</h2>
             </div>
             <div class="info-grid">
                 <div class="info-card">
                     <div class="info-card-inner">
                         <p class="info-label">Cuándo</p>
                         <span class="info-value">Sábado 10 de mayo de 2025 - 13:00 hs</span>
-                        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Cumpleaños+de+Galia&dates=20250510T130000/20250510T180000&details=Celebremos+el+primer+cumpleaños+de+Galia" target="_blank" class="action-button">
-                            <i class="bi bi-calendar-check"></i>
+                        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Cumpleaños+de+Galia&dates=20250510T130000/20250510T180000&details=Celebremos+el+primer+cumpleaños+de+Galia" 
+                           target="_blank" 
+                           class="action-button"
+                           rel="noopener noreferrer"
+                           aria-label="Agendar en Google Calendar">
+                            <i class="bi bi-calendar-check" aria-hidden="true"></i>
                             <span class="button-text">Agendar</span>
                         </a>
                     </div>
@@ -160,8 +165,12 @@
                     <div class="info-card-inner">
                         <p class="info-label">Dónde</p>
                         <span class="info-value">Club Ciclista Juanico, Calle San Marcos</span>
-                        <a href="https://maps.app.goo.gl/sCwzNtgBekG2KZsT6" target="_blank" class="action-button">
-                            <i class="bi bi-geo-alt"></i>
+                        <a href="https://maps.app.goo.gl/sCwzNtgBekG2KZsT6" 
+                           target="_blank" 
+                           class="action-button"
+                           rel="noopener noreferrer"
+                           aria-label="Ver ubicación en Google Maps">
+                            <i class="bi bi-geo-alt" aria-hidden="true"></i>
                             <span class="button-text">¿Cómo llegar?</span>
                         </a>
                     </div>
@@ -170,8 +179,10 @@
                     <div class="info-card-inner">
                         <p class="info-label">Confirma asistencia</p>
                         <span class="info-value">Me gustaría que confirmes tu asistencia</span>
-                        <button onclick="openWhatsAppConfirmation()" class="action-button">
-                            <i class="bi bi-whatsapp"></i>
+                        <button onclick="openWhatsAppConfirmation()" 
+                                class="action-button"
+                                aria-label="Confirmar asistencia por WhatsApp">
+                            <i class="bi bi-whatsapp" aria-hidden="true"></i>
                             <span class="button-text">Confirmar asistencia</span>
                         </button>
                     </div>
