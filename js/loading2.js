@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         nb_sides: 5
                     },
                     image: {
-                        src: "https://galiacumple3.netlify.app/img/daisy.png",
+                        src: "public/daisy.png",
                         width: 100,
                         height: 100
                     }
