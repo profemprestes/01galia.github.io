@@ -72,18 +72,25 @@ function openWhatsAppConfirmation() {
         <h3>¡Nos encantaría que vengas! 😊</h3>
         <p>Por favor, ingresa tu nombre y la cantidad de personas que asistirán al cumpleaños de Galia.</p>
         
-        <label for="name">Tu Nombre</label>
-        <input type="text" id="name" placeholder="Ej: Familia González" required>
-        
-        <label for="people-count">Cantidad de Personas</label>
-        <input type="number" id="people-count" placeholder="1" min="1" required>
-        
-        <div class="modal-buttons">
-            <button id="cancel-btn" class="cancel-btn" onclick="closeModal()">Cancelar</button>
-            <button id="confirm-btn" class="action-btn" onclick="confirmAndSendWhatsApp()">Confirmar y Enviar WhatsApp</button>
-        </div>
+        <form class="modal-form" onsubmit="event.preventDefault(); confirmAndSendWhatsApp();">
+            <div class="form-group">
+                <label for="name">Tu Nombre</label>
+                <input type="text" id="name" placeholder="Ej: Familia González" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="people-count">Cantidad de Personas</label>
+                <input type="number" id="people-count" placeholder="1" min="1" required>
+            </div>
+            
+            <div class="modal-buttons">
+                <button type="button" class="cancel-btn" onclick="closeModal()">Cancelar</button>
+                <button type="submit" class="action-btn">Confirmar</button>
+            </div>
+        </form>
     `;
     modalContainer.classList.remove('hidden');
+    modalContainer.classList.add('show');
 }
 
 function openWishesModal() {
@@ -94,21 +101,30 @@ function openWishesModal() {
         <h3>Deja tu Mensaje para Galia</h3>
         <p>Comparte tus buenos deseos o un lindo recuerdo.</p>
         
-        <label for="wishes-name">Tu Nombre</label>
-        <input type="text" id="wishes-name" placeholder="Ej: Familia González" required>
-        
-        <label for="wishes-message">Mensaje</label>
-        <textarea id="wishes-message" placeholder="Escribe aquí tu mensaje..." required></textarea>
-        
-        <label for="wishes-photo">Sube una Foto (Opcional)</label>
-        <input type="file" id="wishes-photo" accept="image/*">
-        
-        <div class="modal-buttons">
-            <button id="cancel-wishes-btn" class="cancel-btn" onclick="closeModal()">Cancelar</button>
-            <button id="send-wishes-btn" class="action-btn" onclick="sendWishes()">Enviar Mensaje</button>
-        </div>
+        <form class="modal-form" onsubmit="event.preventDefault(); sendWishes();">
+            <div class="form-group">
+                <label for="wishes-name">Tu Nombre</label>
+                <input type="text" id="wishes-name" placeholder="Ej: Familia González" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="wishes-message">Mensaje</label>
+                <textarea id="wishes-message" placeholder="Escribe aquí tu mensaje..." required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="wishes-photo">Sube una Foto (Opcional)</label>
+                <input type="file" id="wishes-photo" accept="image/*">
+            </div>
+            
+            <div class="modal-buttons">
+                <button type="button" class="cancel-btn" onclick="closeModal()">Cancelar</button>
+                <button type="submit" class="action-btn">Enviar Mensaje</button>
+            </div>
+        </form>
     `;
     modalContainer.classList.remove('hidden');
+    modalContainer.classList.add('show');
 }
 
 function openGiftModal() {
@@ -138,6 +154,52 @@ function openGiftModal() {
         </div>
     `;
     modalContainer.classList.remove('hidden');
+    modalContainer.classList.add('show');
+}
+
+function closeModal() {
+    const modalContainer = document.getElementById('modal-container');
+    modalContainer.classList.remove('show');
+    setTimeout(() => {
+        modalContainer.classList.add('hidden');
+    }, 300);
+}
+
+function confirmAndSendWhatsApp() {
+    const name = document.getElementById('name').value.trim();
+    const peopleCount = document.getElementById('people-count').value;
+
+    if (!name || !peopleCount) {
+        Swal.fire({
+            title: '¡Ups!',
+            text: 'Por favor, completa todos los campos.',
+            icon: 'warning',
+            confirmButtonColor: '#d4a373'
+        });
+        return;
+    }
+
+    const message = `¡Hola! Soy ${name} y confirmo la asistencia de ${peopleCount} persona(s) al cumpleaños de Galia.`;
+    const encodedMessage = encodeURIComponent(message);
+    const phoneNumber = '59892475455';
+    
+    window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+    closeModal();
+}
+
+function copyAccountDetails() {
+    const accountDetails = 'BROU, Titular: MAURO PRESTES, Cuenta: 001782901-00001';
+    navigator.clipboard.writeText(accountDetails).then(() => {
+        Swal.fire({
+            title: '¡Copiado!',
+            text: 'Los datos de la cuenta han sido copiados al portapapeles',
+            icon: 'success',
+            timer: 2000,
+            showConfirmButton: false,
+            position: 'top-end',
+            toast: true
+        });
+    });
 }
 
 function sendWishes() {
@@ -153,17 +215,6 @@ function sendWishes() {
     } else {
         alert('Por favor, completa todos los campos obligatorios.');
     }
-}
-
-function copyAccountDetails() {
-    const accountDetails = 'BROU, Titular: MAURO PRESTES, Cuenta: 001782901-00001';
-    navigator.clipboard.writeText(accountDetails).then(() => {
-        alert('Detalles copiados al portapapeles');
-    });
-}
-
-function closeModal() {
-    document.getElementById('modal-container').classList.add('hidden');
 }
 
 function addToGoogleCalendar() {

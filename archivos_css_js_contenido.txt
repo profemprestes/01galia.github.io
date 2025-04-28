@@ -1,0 +1,2036 @@
+--- Archivos CSS ---
+Archivo: /css/global.css
+Contenido:
+:root {
+    --green-tea: #ccd5ae;
+    --light-beige: #e9edc9; 
+    --cream: #fefae0;
+    --light-peach: #faedcd;
+    --soft-ochre: #d4a373;
+    --dark-ochre: #b59f67;
+    --accent-color: #f4a261;
+    --bg-gradient: linear-gradient(135deg, var(--light-peach), var(--cream));
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--cream);
+    color: var(--soft-ochre);
+    min-height: 100vh;
+    overflow-x: hidden;
+    line-height: 1.6;
+    background: var(--bg-gradient);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Baloo 2', cursive;
+    line-height: 1.3;
+    color: var(--dark-ochre);
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+h4, h5, h6 {
+    font-size: 1.25rem;
+}
+
+button {
+    font-family: 'Baloo 2', cursive;
+    cursor: pointer;
+    border: none;
+    padding: 1em 2em;
+    border-radius: 3em;
+    background: var(--soft-ochre);
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    background-color: var(--accent-color);
+}
+
+button:focus {
+    outline: 3px solid var(--soft-ochre);
+    outline-offset: 2px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+a {
+    text-decoration: none;
+    color: var(--soft-ochre);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+.info-card {
+    background-color: var(--light-beige);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.info-label {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--dark-ochre);
+}
+
+.info-value {
+    font-size: 1.25rem;
+    color: var(--soft-ochre);
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    button {
+        padding: 0.8em 1.5em;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .info-card {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .info-card {
+        padding: 1rem;
+    }
+}
+
+
+
+Archivo: /css/particles.css
+Contenido:
+body {
+    margin: 0;
+    font: normal 75% Arial, Helvetica, sans-serif;
+}
+
+canvas {
+    display: block;
+    /* Removed vertical-align as it has no effect with display: block */
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--tea-green);
+    background-image: url("");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    z-index: -1;
+}
+
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.spinning-daisy {
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.8));
+}
+
+p {
+    margin-top: 30px;
+    font-size: 1.5rem;
+    color: #5a3d2b;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.8; }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.1); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #f2c32e;
+    opacity: 0;
+    animation: confetti 3s ease-in-out infinite;
+}
+
+@keyframes confetti {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+}
+
+.loader {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    z-index: 20;
+}
+
+.confetti {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        45deg,
+        var(--papaya-whip),
+        var(--papaya-whip) 10px,
+        var(--buff) 10px,
+        var(--buff) 20px
+    );
+    animation: spin 2s linear infinite;
+    border-radius: 50%;
+}
+
+.balloon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 120px;
+    background-color: var(--buff);
+    border-radius: 50% 50% 0 0;
+    transform: translate(-50%, -50%);
+    animation: float 1.5s ease-in-out infinite alternate;
+}
+
+.count-particles {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(0, 0, 34, 0.7);
+    color: #13E8E9;
+    font-size: 0.8em;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes float {
+    0% { transform: translate(-50%, -50%) translateY(0); }
+    100% { transform: translate(-50%, -50%) translateY(-20px); }
+}
+
+p {
+    margin-top: 20px;
+    color: #333;
+    z-index: 20;
+}
+
+
+
+Archivo: /css/hero.css
+Contenido:
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 2rem 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(245, 243, 243, 0.548);
+    backdrop-filter: blur(5px);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.hero-image {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 12px solid var(--light-peach);
+    box-shadow: 0 8px 32px rgba(212, 163, 115, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.hero-image:hover {
+    transform: scale(1.05);
+}
+
+.hero-image-decor {
+    position: absolute;
+    top: -25px;
+    left: -25px;
+    right: -25px;
+    bottom: -25px;
+    background: rgba(212, 163, 115, 0.15);
+    border-radius: 50%;
+    z-index: -1;
+    animation: pulse 2s infinite;
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+#hero-subtitle {
+    color: var(--green-tea);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Baloo 2', cursive;
+}
+
+#hero-title {
+    color: var(--soft-ochre);
+    font-size: 3.5rem;
+    line-height: 1.2;
+    font-family: 'Baloo 2', cursive;
+}
+
+.hero-details {
+    margin-top: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1.5rem 2.5rem;
+    border-radius: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.hero-details:hover {
+    transform: translateY(-5px);
+}
+
+.hero-details-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.hero-detail-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--soft-ochre);
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+}
+
+.hero-detail-item:hover {
+    transform: translateY(-2px);
+    color: var(--accent-color);
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.hero-detail-item i {
+    font-size: 1.5rem;
+}
+
+.hero-details-separator {
+    color: var(--green-tea);
+    font-size: 1.5rem;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.05); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 0.5; }
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        gap: 2rem;
+    }
+
+    .hero-details-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .hero-details-separator {
+        display: none;
+    }
+
+    #hero-title {
+        font-size: 2.5rem;
+    }
+
+    #hero-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .hero-image {
+        width: 250px;
+        height: 250px;
+        border-width: 8px;
+    }
+
+    .hero-details {
+        padding: 1rem 1.5rem;
+        width: 100%;
+    }
+}
+
+
+Archivo: /css/countdown.css
+Contenido:
+/* Importar variables globales */
+@import url('../styles/global.css');
+
+.countdown {
+    text-align: center;
+    margin: 2rem auto;
+    padding: 2rem 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+}
+
+.countdown h2 {
+    font-size: 2.5rem;
+    color: var(--soft-ochre);
+    margin-bottom: 2rem;
+    font-family: 'Baloo 2', cursive;
+}
+
+#countdown-timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    width: 100%;
+}
+
+.time-block {
+    flex: 1;
+    min-width: 80px;
+    max-width: 120px;
+    background: linear-gradient(145deg, var(--light-beige), var(--cream));
+    padding: 0.8rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.time-block .number {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--soft-ochre);
+    display: block;
+    font-family: 'Baloo 2', cursive;
+}
+
+.time-block .label {
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    color: var(--green-tea);
+    font-weight: 600;
+}
+
+@media (max-width: 480px) {
+    .countdown {
+        padding: 1rem 0.5rem;
+        margin: 1rem auto;
+    }
+
+    .countdown h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    #countdown-timer {
+        gap: 0.5rem;
+    }
+
+    .time-block {
+        min-width: 60px;
+        padding: 0.5rem;
+    }
+}
+
+.time-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.time-block .number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--soft-ochre);
+    display: block;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    font-family: 'Baloo 2', cursive;
+}
+
+.time-block .label {
+    font-size: 1.2rem;
+    color: var(--green-tea);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    .countdown {
+        margin: 1rem 0;
+        padding: 1rem;
+    }
+
+    .countdown h2 {
+        font-size: 2rem;
+    }
+
+    #countdown-timer {
+        gap: 1rem;
+    }
+
+    .time-block {
+        min-width: 100px;
+        padding: 1rem;
+    }
+
+    .time-block .number {
+        font-size: 2.5rem;
+    }
+
+    .time-block .label {
+        font-size: 1rem;
+    }
+}
+
+
+Archivo: /css/details.css
+Contenido:
+@import url('../styles/global.css');
+:root {
+    --tea-green: #ccd5aeff;
+    --beige: #e9edc9ff;
+    --cornsilk: #fefae0ff;
+    --papaya-whip: #faedcdff;
+    --buff: #d4a373ff;
+}
+
+/* General Styles */
+.celebration-section {
+    padding: 2rem 1rem;
+    background-color: var(--cornsilk);
+}
+
+.celebration-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--buff);
+    margin-bottom: 2rem;
+}
+
+.celebration-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+}
+
+/* Celebration Cards */
+.celebration-card {
+    background-color: var(--papaya-whip);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    background-image: linear-gradient(135deg, var(--tea-green), var(--beige));
+}
+
+.celebration-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--buff);
+    margin-bottom: 1rem;
+}
+
+.celebration-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+
+.celebration-icon {
+    width: 24px;
+    margin-right: 10px;
+}
+
+.info-text {
+    font-size: 1rem;
+    color: var(--buff);
+}
+
+/* Location Information */
+.location-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.location-text {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--buff);
+}
+
+/* Buttons */
+.action-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--buff);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-weight: 600;
+    margin: 0.5rem 0;
+    transition: background-color 0.3s;
+}
+
+.action-button:hover {
+    background-color: var(--tea-green);
+}
+
+.action-button img {
+    width: 20px;
+    margin-right: 8px;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 768px) {
+    .celebration-content {
+        grid-template-columns: 1fr;
+    }
+
+    .celebration-card {
+        padding: 1rem;
+    }
+
+    .action-button {
+        width: 100%;
+        padding: 0.7rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .celebration-info .info-item {
+        font-size: 0.9rem;
+    }
+
+    .celebration-icon {
+        width: 20px;
+    }
+}
+
+
+Archivo: /css/modalconfirmar.css
+Contenido:
+@import url('../styles/global.css');
+
+#open-about-btn, #open-message-btn {
+    position: fixed;
+    bottom: 1rem;
+    z-index: 1000;
+    background-color: var(--buff);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 1rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: 
+        background-color 0.3s ease, 
+        transform 0.2s ease;
+}
+
+#open-about-btn {
+    left: 1rem;
+}
+
+#open-message-btn {
+    right: 1rem;
+}
+
+#open-about-btn:hover, #open-message-btn:hover {
+    background-color: color-mix(in srgb, var(--buff) 90%, white);
+    transform: translateY(-2px);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+}
+
+.modal-content {
+    background-color: var(--cornsilk);
+    border-radius: 20px;
+    max-width: 800px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    padding: 2rem;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    transform: scale(0.7);
+    opacity: 0;
+    transition: 
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.modal.show .modal-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--buff);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+    color: color-mix(in srgb, var(--buff) 80%, black);
+}
+
+/* Shared styles for About and Message sections */
+.about-section, .message-section {
+    text-align: center;
+}
+
+.message-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.message-section label {
+    text-align: left;
+    font-weight: bold;
+}
+
+.message-section input,
+.message-section textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--buff);
+    border-radius: 8px;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.modal-buttons button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 
+        background-color 0.3s ease, 
+        transform 0.2s ease;
+}
+
+.modal-buttons button[type="button"] {
+    background-color: var(--tea-green);
+    color: #333;
+}
+
+.modal-buttons button[type="submit"] {
+    background-color: var(--buff);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .modal-buttons {
+        flex-direction: column;
+    }
+}
+
+/* Estilos para el nuevo diseño del modal "Sobre mí" */
+.space-y-4 > * {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.space-y-4 > *:first-child {
+    margin-top: 0;
+}
+
+.space-y-4 > *:last-child {
+    margin-bottom: 0;
+}
+
+.flex {
+    display: flex;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.items-start {
+    align-items: flex-start;
+}
+
+.gap-3 {
+    gap: 0.75rem;
+}
+
+.mt-1 {
+    margin-top: 0.25rem;
+}
+
+.mt-5 {
+    margin-top: 1.25rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.text-muted-foreground {
+    color: #6c757d;
+}
+
+.h-5, .w-5 {
+    height: 1.25rem;
+    width: 1.25rem;
+}
+
+.flex-shrink-0 {
+    flex-shrink: 0;
+}
+
+.text-yellow-500 {
+    color: #f59e0b;
+}
+
+.text-blue-400 {
+    color: #60a5fa;
+}
+
+.text-green-500 {
+    color: #10b981;
+}
+
+.text-purple-500 {
+    color: #8b5cf6;
+}
+
+.text-red-500 {
+    color: #ef4444;
+}
+
+.text-pink-500 {
+    color: #ec4899;
+}
+
+.text-green-700 {
+    color: #047857;
+}
+
+.text-gray-500 {
+    color: #6b7280;
+}
+
+@media (min-width: 640px) {
+    .sm\:text-base {
+        font-size: 1rem;
+    }
+}
+
+/* Estilos adicionales para la sección de regalo */
+.bg-secondary\/10 {
+    background-color: rgba(212, 163, 115, 0.1);
+}
+
+.bg-card {
+    background-color: white;
+}
+
+.border-secondary\/30 {
+    border-color: rgba(212, 163, 115, 0.3);
+}
+
+.border-secondary\/40 {
+    border-color: rgba(212, 163, 115, 0.4);
+}
+
+.text-secondary-foreground {
+    color: #5a3d2b;
+}
+
+.text-secondary-foreground\/80 {
+    color: rgba(90, 61, 43, 0.8);
+}
+
+.text-card-foreground {
+    color: #333;
+}
+
+.text-secondary {
+    color: var(--buff);
+}
+
+.shadow-inner {
+    box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+}
+
+.shadow-sm {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.space-x-3 > * + * {
+    margin-left: 0.75rem;
+}
+
+.p-3 {
+    padding: 0.75rem;
+}
+
+.p-4 {
+    padding: 1rem;
+}
+
+.rounded {
+    border-radius: 0.25rem;
+}
+
+.rounded-lg {
+    border-radius: 0.5rem;
+}
+
+.rounded-md {
+    border-radius: 0.375rem;
+}
+
+.tabular-nums {
+    font-variant-numeric: tabular-nums;
+}
+
+.break-all {
+    word-break: break-all;
+}
+
+.ring-offset-background {
+    --ring-offset-color: white;
+}
+
+.focus-visible\:ring-2:focus-visible {
+    --ring-width: 2px;
+    box-shadow: 0 0 0 var(--ring-width) var(--buff);
+}
+
+.focus-visible\:ring-ring:focus-visible {
+    --ring-color: var(--buff);
+}
+
+.focus-visible\:ring-offset-2:focus-visible {
+    --ring-offset-width: 2px;
+    box-shadow: 0 0 0 var(--ring-offset-width) var(--ring-offset-color), 0 0 0 calc(var(--ring-offset-width) + var(--ring-width)) var(--ring-color);
+}
+
+.disabled\:pointer-events-none:disabled {
+    pointer-events: none;
+}
+
+.disabled\:opacity-50:disabled {
+    opacity: 0.5;
+}
+
+.hover\:bg-secondary\/10:hover {
+    background-color: rgba(212, 163, 115, 0.1);
+}
+
+.hover\:text-accent-foreground:hover {
+    color: #5a3d2b;
+}
+
+/* Ajustes responsivos para la sección de regalo */
+@media (max-width: 640px) {
+    .flex-wrap {
+        flex-wrap: wrap;
+    }
+    
+    .space-x-3 > * {
+        margin-left: 0;
+    }
+    
+    .space-x-3 > * + * {
+        margin-top: 0.5rem;
+    }
+    
+    .flex-grow {
+        flex-grow: 1;
+        width: 100%;
+    }
+}
+
+@media (min-width: 640px) {
+    .sm\:p-4 {
+        padding: 1rem;
+    }
+    
+    .sm\:p-5 {
+        padding: 1.25rem;
+    }
+    
+    .sm\:h-6, .sm\:w-6 {
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+    
+    .sm\:h-10, .sm\:w-10 {
+        height: 2.5rem;
+        width: 2.5rem;
+    }
+    
+    .sm\:text-lg {
+        font-size: 1.125rem;
+    }
+    
+    .sm\:text-xl {
+        font-size: 1.25rem;
+    }
+}
+
+
+
+/* Ajuste para el botón de copiar */
+.copy-button svg,
+button[class*="inline-flex"] svg {
+    pointer-events: none;
+    height: 1rem;
+    width: 1rem;
+    flex-shrink: 0;
+}
+
+
+/* Estilos para el modal RSVP */
+#rsvp-modal.hidden { display: none; } 
+#rsvp-modal .modal-content { max-width: 400px; width: 90%; } 
+#rsvp-form input { width: 100%; margin-bottom: 1rem; padding: 0.5rem; border-radius: 0.5rem; border: 1px solid var(--buff); } 
+.modal-buttons { display: flex; justify-content: flex-end; gap: 0.5rem; } 
+#rsvp-send { background: var(--buff); color: #fff; }
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    background: linear-gradient(to bottom right, var(--cornsilk), var(--papaya-whip));
+    padding: 2rem;
+    border-radius: 20px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    border: 3px solid var(--buff);
+}
+
+.modal header {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.modal h2 {
+    color: var(--buff);
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--buff);
+}
+
+.modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.modal label {
+    font-weight: bold;
+    color: #333;
+}
+
+.modal input {
+    padding: 0.8rem;
+    border: 2px solid var(--buff);
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.modal-buttons button {
+    flex: 1;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+#rsvp-cancel {
+    background-color: #f0f0f0;
+    color: #666;
+}
+
+#rsvp-send {
+    background-color: var(--buff);
+    color: white;
+}
+
+.modal-buttons button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.about-btn {
+    background-color: var(--buff);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.about-btn:hover {
+    transform: translateY(-2px);
+    background-color: color-mix(in srgb, var(--buff) 90%, white);
+}
+
+.about-section {
+    padding: 20px;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.about-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    border: 4px solid var(--buff);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-text {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+@media (max-width: 768px) {
+    .about-image {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+.modal-buttons button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Estilos para la sección de regalo */
+.gift-section {
+    background: linear-gradient(135deg, rgba(204, 213, 174, 0.1), rgba(204, 213, 174, 0.2));
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(204, 213, 174, 0.3);
+    margin: 2rem 0;
+}
+
+.gift-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.gift-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.gift-icon {
+    width: 2rem;
+    height: 2rem;
+    color: var(--buff);
+}
+
+.gift-header h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--buff);
+    margin: 0;
+}
+
+.gift-description {
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.bank-info-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(204, 213, 174, 0.4);
+}
+
+.bank-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(204, 213, 174, 0.3);
+}
+
+.bank-icon {
+    width: 2rem;
+    height: 2rem;
+    color: var(--buff);
+}
+
+.bank-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--buff);
+}
+
+.bank-details {
+    display: grid;
+    gap: 1.25rem;
+}
+
+.bank-detail-item {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.bank-detail-item label {
+    font-size: 0.875rem;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 500;
+}
+
+.bank-detail-item span {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.account-number {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.copy-btn {
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.copy-btn:hover {
+    background: rgba(204, 213, 174, 0.2);
+}
+
+.copy-btn img {
+    width: 1.25rem;
+    height: 1.25rem;
+    opacity: 0.7;
+}
+
+.gift-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.7);
+    font-style: italic;
+}
+
+/* Estilos responsivos */
+@media (max-width: 640px) {
+    .gift-section {
+        padding: 1rem;
+    }
+    
+    .bank-info-card {
+        padding: 1rem;
+    }
+    
+    .gift-header h4 {
+        font-size: 1.25rem;
+    }
+    
+    .bank-detail-item span {
+        font-size: 1rem;
+    }
+}
+
+.modal-buttons button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.about-btn {
+    background-color: var(--buff);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.about-btn:hover {
+    transform: translateY(-2px);
+    background-color: color-mix(in srgb, var(--buff) 90%, white);
+}
+
+.about-section {
+    padding: 20px;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.about-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    border: 4px solid var(--buff);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-text {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+@media (max-width: 768px) {
+    .about-image {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+.modal-buttons button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+
+--- Archivos JS ---
+Archivo: https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js
+(Remoto, contenido no descargado)
+
+Archivo: https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js
+(Remoto, contenido no descargado)
+
+Archivo: https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js
+(Remoto, contenido no descargado)
+
+Archivo: https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js
+(Remoto, contenido no descargado)
+
+Archivo: /js/hero-particles.js
+Contenido:
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize particles only if the element exists
+    const particlesElement = document.getElementById('particles-js');
+    
+    if (particlesElement) {
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 280,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: "#ffffff"
+                },
+                shape: {
+                    type: "image",
+                    stroke: {
+                        width: 0,
+                        color: "#000000"
+                    },
+                    polygon: {
+                        nb_sides: 5
+                    },
+                    image: {
+                        src: "public/daisy.png",
+                        width: 100,
+                        height: 100
+                    }
+                },
+                opacity: {
+                    value: 0.5,
+                    random: true,
+                    anim: {
+                        enable: false,
+                        speed: 1,
+                        opacity_min: 0.1,
+                        sync: false
+                    }
+                },
+                size: {
+                    value: 10,
+                    random: true,
+                    anim: {
+                        enable: false,
+                        speed: 40,
+                        size_min: 0.1,
+                        sync: false
+                    }
+                },
+                line_linked: {
+                    enable: false,
+                    distance: 500,
+                    color: "#ffffff",
+                    opacity: 0.4,
+                    width: 2
+                },
+                move: {
+                    enable: true,
+                    speed: 6,
+                    direction: "bottom",
+                    random: false,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false,
+                    attract: {
+                        enable: false,
+                        rotateX: 600,
+                        rotateY: 1200
+                    }
+                }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: "bubble"
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: "repulse"
+                    },
+                    resize: true
+                },
+                modes: {
+                    grab: {
+                        distance: 400,
+                        line_linked: {
+                            opacity: 0.5
+                        }
+                    },
+                    bubble: {
+                        distance: 400,
+                        size: 4,
+                        duration: 0.3,
+                        opacity: 1,
+                        speed: 3
+                    },
+                    repulse: {
+                        distance: 200,
+                        duration: 0.4
+                    },
+                    push: {
+                        particles_nb: 4
+                    },
+                    remove: {
+                        particles_nb: 2
+                    }
+                }
+            },
+            retina_detect: true
+        });
+    }
+    
+});
+
+Archivo: /js/hero.js
+Contenido:
+document.addEventListener('DOMContentLoaded', () => {
+    initHeroAnimations();
+    setupHeroInteractions();
+});
+
+function initHeroAnimations() {
+    // Animación de entrada para la imagen
+    gsap.from('#hero-image-container', {
+        duration: 1.5,
+        y: 50,
+        opacity: 0,
+        ease: 'power3.out'
+    });
+
+    // Animación para el texto
+    gsap.from(['#hero-subtitle', '#hero-title'], {
+        duration: 1,
+        y: 30,
+        opacity: 0,
+        stagger: 0.3,
+        delay: 0.5,
+        ease: 'power2.out'
+    });
+
+    // Animación para los detalles
+    gsap.from('#hero-details-wrapper', {
+        duration: 1,
+        y: 20,
+        opacity: 0,
+        delay: 1.2,
+        ease: 'power2.out'
+    });
+}
+
+function setupHeroInteractions() {
+    // Efecto hover para la imagen
+    const heroImage = document.querySelector('.hero-image');
+    if (heroImage) {
+        heroImage.addEventListener('mouseenter', () => {
+            gsap.to(heroImage, {
+                scale: 1.05,
+                duration: 0.3,
+                ease: 'power2.out'
+            });
+        });
+
+        heroImage.addEventListener('mouseleave', () => {
+            gsap.to(heroImage, {
+                scale: 1,
+                duration: 0.3,
+                ease: 'power2.out'
+            });
+        });
+    }
+
+    // Efecto hover para los detalles
+    const detailItems = document.querySelectorAll('.hero-detail-item');
+    detailItems.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            gsap.to(item, {
+                y: -5,
+                duration: 0.2,
+                ease: 'power2.out'
+            });
+        });
+
+        item.addEventListener('mouseleave', () => {
+            gsap.to(item, {
+                y: 0,
+                duration: 0.2,
+                ease: 'power2.out'
+            });
+        });
+    });
+}
+
+Archivo: /js/details.js
+Contenido:
+document.addEventListener('DOMContentLoaded', () => {
+    const infoCards = document.querySelectorAll('.info-card');
+    
+    infoCards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            gsap.to(card, {
+                y: -15,
+                boxShadow: '0 8px 24px rgba(0,0,0,0.15)',
+                duration: 0.3,
+                ease: 'power2.out'
+            });
+        });
+
+        card.addEventListener('mouseleave', () => {
+            gsap.to(card, {
+                y: 0,
+                boxShadow: '0 4px 16px rgba(0,0,0,0.1)',
+                duration: 0.3,
+                ease: 'power2.out'
+            });
+        });
+    });
+
+    // Animación inicial de las tarjetas
+    gsap.from('.info-card', {
+        y: 50,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: 'power3.out',
+        scrollTrigger: {
+            trigger: '.info-grid',
+            start: 'top bottom-=100',
+            toggleActions: 'play none none reverse'
+        }
+    });
+});
+
+Archivo: /js/principal.js
+Contenido:
+document.addEventListener('DOMContentLoaded', () => {
+    try {
+        initCountdown();
+        setupModalInteractions();
+    } catch (error) {
+        console.error('Initialization error:', error);
+    }
+});
+
+
+function initCountdown() {
+    const eventDate = new Date('2025-05-10T13:00:00').getTime();
+    const countdownElements = {
+        days: document.getElementById('days'),
+        hours: document.getElementById('hours'),
+        minutes: document.getElementById('minutes'),
+        seconds: document.getElementById('seconds')
+    };
+
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = eventDate - now;
+
+        // Si el evento ya pasó
+        if (distance < 0) {
+            Object.values(countdownElements).forEach(el => {
+                if (el) el.textContent = '00';
+            });
+            return;
+        }
+
+        if (Object.values(countdownElements).every(el => el)) {
+            // Calcular los valores
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Actualizar con formato de dos dígitos
+            countdownElements.days.textContent = days.toString().padStart(2, '0');
+            countdownElements.hours.textContent = hours.toString().padStart(2, '0');
+            countdownElements.minutes.textContent = minutes.toString().padStart(2, '0');
+            countdownElements.seconds.textContent = seconds.toString().padStart(2, '0');
+
+            // Agregar animación cuando cambian los números
+            Object.values(countdownElements).forEach(el => {
+                el.classList.remove('number-change');
+                void el.offsetWidth; // Forzar reflow
+                el.classList.add('number-change');
+            });
+        }
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+}
+
+function setupModalInteractions() {
+    const modalContainer = document.getElementById('modal-container');
+    modalContainer.addEventListener('click', (e) => {
+        if (e.target === modalContainer) {
+            closeModal();
+        }
+    });
+}
+
+function openWhatsAppConfirmation() {
+    const modalContainer = document.getElementById('modal-container');
+    const modalContent = document.getElementById('modal-content');
+    modalContent.innerHTML = `
+        <button class="close-modal" onclick="closeModal()" aria-label="Cerrar modal">×</button>
+        <h3>¡Nos encantaría que vengas! 😊</h3>
+        <p>Por favor, ingresa tu nombre y la cantidad de personas que asistirán al cumpleaños de Galia.</p>
+        
+        <form class="modal-form" onsubmit="event.preventDefault(); confirmAndSendWhatsApp();">
+            <div class="form-group">
+                <label for="name">Tu Nombre</label>
+                <input type="text" id="name" placeholder="Ej: Familia González" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="people-count">Cantidad de Personas</label>
+                <input type="number" id="people-count" placeholder="1" min="1" required>
+            </div>
+            
+            <div class="modal-buttons">
+                <button type="button" class="cancel-btn" onclick="closeModal()">Cancelar</button>
+                <button type="submit" class="action-btn">Confirmar</button>
+            </div>
+        </form>
+    `;
+    modalContainer.classList.remove('hidden');
+    modalContainer.classList.add('show');
+}
+
+function openWishesModal() {
+    const modalContainer = document.getElementById('modal-container');
+    const modalContent = document.getElementById('modal-content');
+    modalContent.innerHTML = `
+        <button class="close-modal" onclick="closeModal()" aria-label="Cerrar modal">×</button>
+        <h3>Deja tu Mensaje para Galia</h3>
+        <p>Comparte tus buenos deseos o un lindo recuerdo.</p>
+        
+        <form class="modal-form" onsubmit="event.preventDefault(); sendWishes();">
+            <div class="form-group">
+                <label for="wishes-name">Tu Nombre</label>
+                <input type="text" id="wishes-name" placeholder="Ej: Familia González" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="wishes-message">Mensaje</label>
+                <textarea id="wishes-message" placeholder="Escribe aquí tu mensaje..." required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="wishes-photo">Sube una Foto (Opcional)</label>
+                <input type="file" id="wishes-photo" accept="image/*">
+            </div>
+            
+            <div class="modal-buttons">
+                <button type="button" class="cancel-btn" onclick="closeModal()">Cancelar</button>
+                <button type="submit" class="action-btn">Enviar Mensaje</button>
+            </div>
+        </form>
+    `;
+    modalContainer.classList.remove('hidden');
+    modalContainer.classList.add('show');
+}
+
+function openGiftModal() {
+    const modalContainer = document.getElementById('modal-container');
+    const modalContent = document.getElementById('modal-content');
+    modalContent.innerHTML = `
+        <button class="close-modal" onclick="closeModal()" aria-label="Cerrar modal">×</button>
+        <h3>Un poco sobre mí</h3>
+        <p>¡Hola! Soy Galia 💖</p>
+        
+        <div id="gift-info">
+            <p>📅 <strong>Bebé:</strong> Nací el 10/05/2024</p>
+            <p>📏 <strong>Medidas:</strong> Mido 72 cm y peso 10 kg. ¡Me dicen que soy una gordita preciosa! 🥰</p>
+            <p>🧸 <strong>Juguetes:</strong> Me encanta jugar con juguetes, ¡aunque prefiero las cajas y tuppers! 📦</p>
+            
+            <h4>Información de Regalos</h4>
+            <p>Si prefieres hacer un regalo monetario, mis papis facilitan esta opción:</p>
+            
+            <div class="details">
+                <p>Banco: BROU</p>
+                <p>Titular: MAURO PRESTES</p>
+                <p>Cuenta: 001782901-00001</p>
+                <button class="copy-btn" onclick="copyAccountDetails()">Copiar Detalles</button>
+            </div>
+            
+            <p>¡Tu presencia es el mejor regalo! 🎁</p>
+        </div>
+    `;
+    modalContainer.classList.remove('hidden');
+    modalContainer.classList.add('show');
+}
+
+function closeModal() {
+    const modalContainer = document.getElementById('modal-container');
+    modalContainer.classList.remove('show');
+    setTimeout(() => {
+        modalContainer.classList.add('hidden');
+    }, 300);
+}
+
+function confirmAndSendWhatsApp() {
+    const name = document.getElementById('name').value.trim();
+    const peopleCount = document.getElementById('people-count').value;
+
+    if (!name || !peopleCount) {
+        Swal.fire({
+            title: '¡Ups!',
+            text: 'Por favor, completa todos los campos.',
+            icon: 'warning',
+            confirmButtonColor: '#d4a373'
+        });
+        return;
+    }
+
+    const message = `¡Hola! Soy ${name} y confirmo la asistencia de ${peopleCount} persona(s) al cumpleaños de Galia.`;
+    const encodedMessage = encodeURIComponent(message);
+    const phoneNumber = '59892475455';
+    
+    window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+    closeModal();
+}
+
+function copyAccountDetails() {
+    const accountDetails = 'BROU, Titular: MAURO PRESTES, Cuenta: 001782901-00001';
+    navigator.clipboard.writeText(accountDetails).then(() => {
+        Swal.fire({
+            title: '¡Copiado!',
+            text: 'Los datos de la cuenta han sido copiados al portapapeles',
+            icon: 'success',
+            timer: 2000,
+            showConfirmButton: false,
+            position: 'top-end',
+            toast: true
+        });
+    });
+}
+
+function sendWishes() {
+    const name = document.getElementById('wishes-name').value;
+    const message = document.getElementById('wishes-message').value;
+    const photo = document.getElementById('wishes-photo').files[0];
+
+    if (name && message) {
+        // Here you can add logic to send the wishes, 
+        // e.g., via email, save to a database, etc.
+        alert(`Mensaje enviado por ${name}`);
+        closeModal();
+    } else {
+        alert('Por favor, completa todos los campos obligatorios.');
+    }
+}
+
+function addToGoogleCalendar() {
+    const googleCalendarLink = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Cumpleaños+de+Galia&dates=20250510T130000/20250510T180000&details=¡Celebremos+el+primer+cumpleaños+de+Galia!&location=Club+Ciclista+Juanico';
+    window.open(googleCalendarLink, '_blank');
+}
+
+function openGoogleMaps() {
+    const googleMapsLink = 'https://maps.app.goo.gl/sCwzNtgBekG2KZsT6';
+    window.open(googleMapsLink, '_blank');
+}
+
+// This function was missing in the provided plan, 
+// but it is referenced in the openWhatsAppConfirmation function.
+// You might want to implement the logic for this function.
+function confirmAndSendWhatsApp() {
+    // Implement the logic to confirm and send WhatsApp message.
+}

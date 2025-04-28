@@ -1,0 +1,17 @@
+--- Archivos CSS ---
+/css/global.css
+/css/particles.css
+/css/hero.css
+/css/countdown.css
+/css/details.css
+/css/modalconfirmar.css
+
+--- Archivos JS ---
+https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js
+https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js
+https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js
+https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js
+/js/hero-particles.js
+/js/hero.js
+/js/details.js
+/js/principal.js
