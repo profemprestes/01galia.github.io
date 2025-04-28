@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     shape: {
                         type: 'image',
                         image: {
-                            src: 'https://galiacumple3.netlify.app/img/daisy.png',
+                            src: 'daisy.svg',  // Remove leading slash
                             width: 100,
                             height: 100
                         }

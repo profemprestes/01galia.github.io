@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
         particlesJS('particles-js', {
             particles: {
                 number: {
-                    value: 180,
+                    value: 80,
                     density: {
                         enable: true,
                         value_area: 800
@@ -114,5 +114,9 @@ document.addEventListener('DOMContentLoaded', function() {
             retina_detect: true
         });
     }
-
+    
+    // Redirect to intro page after loading
+    setTimeout(function() {
+        window.location.href = 'intro.html';
+    }, 3000); // 3 seconds delay
 });

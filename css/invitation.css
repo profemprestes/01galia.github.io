@@ -1,0 +1,67 @@
+/* Estilos para el contenedor de carga */
+.loading-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: rgba(254, 250, 224, 0.9);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+}
+
+/* Estilos para el spinner de la flor */
+.flower-spinner {
+    margin-bottom: 1.5rem;
+}
+
+.flower-spin {
+    width: 80px;
+    height: 80px;
+    animation: flowerRotate 3s linear infinite;
+    filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.2));
+}
+
+/* Estilos para el texto de carga */
+.loading-text {
+    font-family: 'Baloo 2', cursive;
+    font-size: 1.5rem;
+    color: #606c38;
+    margin: 0;
+}
+
+.highlight {
+    color: #bc6c25;
+    font-weight: bold;
+}
+
+/* Animación de rotación de la flor */
+@keyframes flowerRotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+    .loading-container {
+        padding: 1.5rem;
+        width: 80%;
+        max-width: 300px;
+    }
+
+    .flower-spin {
+        width: 60px;
+        height: 60px;
+    }
+
+    .loading-text {
+        font-size: 1.2rem;
+    }
+}

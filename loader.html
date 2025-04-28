@@ -1,11 +1,24 @@
-body {
+<div id="particles-js">
+    <div class="loader-container">
+        <div class="loader">
+            <img src="public/daisy.svg" class="spinning-daisy" alt="Margarita girando">
+        </div>
+        <p>Cargando la Invitacion de Galia</p>
+    </div>
+</div>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stats.js/r16/Stats.min.js"></script>
+    <script src="js/loader2.js"></script>
+
+    <style>
+    body {
     margin: 0;
     font: normal 75% Arial, Helvetica, sans-serif;
 }
 
 canvas {
     display: block;
-    /* Removed vertical-align as it has no effect with display: block */
+    vertical-align: bottom;
 }
 
 #particles-js {
@@ -136,3 +149,4 @@ p {
     z-index: 20;
 }
 
+    </style>
