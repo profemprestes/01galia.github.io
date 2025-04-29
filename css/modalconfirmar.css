@@ -1,137 +1,106 @@
-.modal-container {
+/* Estilos para el modal de confirmación */
+#modal-container {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(5px);
-}
-
-.modal-container.show {
-    opacity: 1;
-    visibility: visible;
 }
 
 .modal {
-    background: white;
-    border-radius: 2rem;
-    padding: 2.5rem;
-    width: 90%;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 20px;
     max-width: 500px;
+    width: 90%;
     position: relative;
-    transform: scale(0.7);
-    opacity: 0;
-    transition: all 0.3s ease;
+    font-family: 'Nunito', sans-serif;
+    animation: modalFadeIn 0.3s ease;
 }
 
-.modal-container.show .modal {
-    transform: scale(1);
-    opacity: 1;
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .modal h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
     font-family: 'Baloo 2', cursive;
-    font-size: 2rem;
-    color: var(--dark-ochre);
-    margin-bottom: 1.5rem;
-    text-align: center;
+    font-size: 1.8rem;
 }
 
 .modal p {
-    color: var(--soft-ochre);
+    color: var(--text-color);
     margin-bottom: 1.5rem;
-    text-align: center;
 }
 
-.modal-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.form-group label {
-    font-family: 'Nunito', sans-serif;
-    color: var(--dark-ochre);
+.modal label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
     font-weight: 600;
 }
 
-.modal input,
-.modal textarea {
-    padding: 1rem;
-    border: 2px solid var(--light-peach);
-    border-radius: 1rem;
+.modal input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1.5rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
     font-family: 'Nunito', sans-serif;
-    transition: all 0.3s ease;
 }
 
-.modal input:focus,
-.modal textarea:focus {
+.modal input:focus {
     outline: none;
-    border-color: var(--soft-ochre);
-    box-shadow: 0 0 0 3px rgba(212, 163, 115, 0.2);
-}
-
-.modal textarea {
-    min-height: 120px;
-    resize: vertical;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(250, 237, 205, 0.3);
 }
 
 .modal-buttons {
     display: flex;
     gap: 1rem;
-    margin-top: 1.5rem;
+    margin-top: 2rem;
 }
 
-.modal .btn-primary,
-.modal .btn-secondary {
-    flex: 1;
-    padding: 1rem;
-    border-radius: 2rem;
+.cancel-btn, .action-btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 10px;
     font-family: 'Nunito', sans-serif;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
-.modal .btn-primary {
-    background-color: var(--soft-ochre);
+.cancel-btn {
+    background-color: #f0f0f0;
+    color: var(--text-color);
+}
+
+.action-btn {
+    background-color: var(--primary-color);
     color: white;
-    border: none;
+    flex: 1;
 }
 
-.modal .btn-secondary {
-    background-color: transparent;
-    color: var(--soft-ochre);
-    border: 2px solid var(--soft-ochre);
+.cancel-btn:hover {
+    background-color: #e0e0e0;
 }
 
-.modal .btn-primary:hover,
-.modal .btn-secondary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.modal .btn-primary:hover {
-    background-color: var(--dark-ochre);
-}
-
-.modal .btn-secondary:hover {
-    background-color: var(--soft-ochre);
-    color: white;
+.action-btn:hover {
+    background-color: #bbc79e;
 }
 
 .close-modal {
@@ -141,36 +110,27 @@
     background: none;
     border: none;
     font-size: 1.5rem;
-    color: var(--soft-ochre);
+    color: var(--text-color);
     cursor: pointer;
-    transition: transform 0.3s ease;
+    padding: 0.5rem;
+    line-height: 1;
 }
 
 .close-modal:hover {
-    transform: rotate(90deg);
-    color: var(--dark-ochre);
+    color: var(--primary-color);
 }
 
 @media (max-width: 768px) {
     .modal {
-        padding: 2rem;
+        padding: 1.5rem;
         width: 95%;
     }
-
-    .modal h3 {
-        font-size: 1.8rem;
-    }
-
+    
     .modal-buttons {
         flex-direction: column;
     }
-
-    .modal .btn-primary,
-    .modal .btn-secondary {
+    
+    .cancel-btn, .action-btn {
         width: 100%;
     }
-}
-
-.hidden {
-    display: none !important;
 }

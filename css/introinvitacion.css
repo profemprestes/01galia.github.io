@@ -1,0 +1,238 @@
+/* Variables */
+:root {
+    --primary-color: #ccd5ae;
+    --secondary-color: #e9edc9;
+    --accent-color: #faedcd;
+    --text-color: #4a4a4a;
+    --card-bg: rgba(255, 255, 255, 0.85);
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    --card-border: rgba(255, 255, 255, 0.3);
+    --button-gradient: linear-gradient(45deg, #faedcd, #d4a373);
+}
+
+/* Estilos generales */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+    overflow: hidden;
+    background-color: #f8f9fa;
+    color: var(--text-color);
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+/* Contenedor de la tarjeta */
+.card-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    z-index: 1;
+}
+
+/* Estilos de la tarjeta */
+.invitation-card {
+    position: relative;
+    width: 90%;
+    max-width: 500px;
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    box-shadow: var(--card-shadow);
+    text-align: center;
+    overflow: hidden;
+    border: 1px solid var(--card-border);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.invitation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Decoraciones de la tarjeta */
+.card-decoration {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-image: url('../public/daisy.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+}
+
+.top-left {
+    top: 10px;
+    left: 10px;
+    transform: rotate(-15deg);
+}
+
+.top-right {
+    top: 10px;
+    right: 10px;
+    transform: rotate(15deg);
+}
+
+.bottom-left {
+    bottom: 10px;
+    left: 10px;
+    transform: rotate(-195deg);
+}
+
+.bottom-right {
+    bottom: 10px;
+    right: 10px;
+    transform: rotate(195deg);
+}
+
+/* Título de la tarjeta */
+.card-title {
+    font-family: 'Baloo 2', cursive;
+    font-size: 2.5rem;
+    color: #d4a373;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenido de la tarjeta */
+.card-content {
+    margin-bottom: 2rem;
+}
+
+.card-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+.click-hint {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #888;
+    margin-top: 1rem;
+}
+
+/* Botón de continuar */
+.continue-btn {
+    position: relative;
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    background: var(--button-gradient);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(212, 163, 115, 0.3);
+}
+
+.continue-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(212, 163, 115, 0.4);
+}
+
+.continue-btn:active {
+    transform: translateY(-1px);
+}
+
+.button-sparkle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    transform: translateX(-100%);
+}
+
+/* Animación del brillo del botón */
+@keyframes sparkle {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .invitation-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .card-title {
+        font-size: 2rem;
+    }
+    
+    .card-content p {
+        font-size: 1.1rem;
+    }
+    
+    .card-decoration {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .invitation-card {
+        padding: 1.5rem 1rem;
+    }
+    
+    .card-title {
+        font-size: 1.8rem;
+    }
+    
+    .card-content p {
+        font-size: 1rem;
+    }
+    
+    .continue-btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    .card-decoration {
+        width: 30px;
+        height: 30px;
+    }
+}
+/* Estilos para la imagen hero */
+.hero-image-container {
+    margin: -1rem -1rem 1.5rem;
+    overflow: hidden;
+    border-radius: 15px 15px 0 0;
+    text-align: center;
+}
+
+.hero-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.5s ease;
+}
+
+.invitation-card:hover .hero-image {
+    transform: scale(1.03);
+}
+
+/* Ajustar el padding superior de la tarjeta para acomodar la imagen */
+.invitation-card {
+    padding-top: 10;
+}
