@@ -1,0 +1,639 @@
+Contenido del archivo HTML:
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta
+        name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Primary Meta Tags -->
+        <title>Galia cumple 1 año! | Bienvenida</title>
+        <meta name="title" content="Galia cumple 1 año! | Bienvenida">
+        <meta
+        name="description" content="¡Bienvenidos a la aventura de Galia! Acompáñanos en la celebración de su primer año lleno de sonrisas y momentos especiales.">
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://galiacumple1.netlify.app/intro">
+        <meta property="og:title" content="Galia cumple 1 año! | Bienvenida">
+        <meta property="og:description" content="¡Bienvenidos a la aventura de Galia! Acompáñanos en la celebración de su primer año lleno de sonrisas y momentos especiales.">
+        <meta
+        property="og:image" content="https://galiacumple1.netlify.app/img/galia-share.jpg">
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="https://galiacumple1.netlify.app/intro">
+        <meta property="twitter:title" content="Galia cumple 1 año! | Bienvenida">
+        <meta property="twitter:description" content="¡Bienvenidos a la aventura de Galia! Acompáñanos en la celebración de su primer año lleno de sonrisas y momentos especiales.">
+        <meta
+        property="twitter:image" content="https://galiacumple1.netlify.app/img/galia-share.jpg">
+
+        <!-- Theme Color -->
+        <meta
+        name="theme-color" content="#ccd5aeff">
+
+        <!-- Favicon and App Icons -->
+        <link rel="icon" type="image/png" sizes="32x32" href="public/favicon/favicon-32x32.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="public/favicon/apple-touch-icon.png">
+        <link
+        rel="manifest" href="public/favicon/site.webmanifest">
+
+        <!-- Preconnect -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+        rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+        <!-- Preload Critical Resources -->
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Nunito:wght@400;700&display=swap" as="style">
+        <link
+        rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" as="style">
+
+        <!-- Styles -->
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+        <link rel="stylesheet" href="css/global.css">
+        <link rel="stylesheet" href="css/principalnuevo.css">
+        <link
+        rel="stylesheet" href="css/countdown.css">
+        <link rel="stylesheet" href="css/principaldetalle.css">
+        <link rel="stylesheet" href="css/modalconfirmar.css">
+        <link rel="stylesheet" href="css/modalsobremi.css">
+
+        <!-- Bootstrap Icons -->
+        <link
+        rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+        <!-- Deferred Scripts -->
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+        <script src="js/particlespropio.js" defer></script>
+        <script src="js/principalnuevo.js" defer></script>
+        <script src="js/countdown.js" defer></script>
+        <script src="js/principaldetalle.js" defer></script>
+        <script src="js/modalconfirmar.js" defer></script>
+        <script src="js/modalsobremi.js" defer></script>
+    </head>
+    <body>
+        <div id="particles-js"></div>
+        <!-- Hero Seccion -->
+        <section id="hero-main" class="hero-section" aria-labelledby="hero-title">
+            <div id="hero-overlay" class="hero-overlay"></div>
+
+            <div id="hero-content-wrapper" class="hero-content">
+                <div class="hero-card animate__animated animate__fadeIn">
+                    <div id="hero-image-container" class="hero-image animate__animated animate__zoomIn">
+                        <img src="public/GaliaHero.svg" alt="Galia en su primer cumpleaños" loading="lazy">
+                        <div class="hero-image-decor"></div>
+                    </div>
+
+                    <div class="hero-text-container">
+                        <h2 id="hero-subtitle" class="animate__animated animate__fadeInUp animate__delay-1s">
+                            ¡Acompáñame a celebrar!
+                        </h2>
+
+                        <h1 id="hero-title" class="animate__animated animate__fadeInUp animate__delay-1s">
+                            Mi primer añito ¡Galia!
+                        </h1>
+
+                        <div class="hero-details-wrapper animate__animated animate__fadeIn animate__delay-2s">
+                            <div class="hero-detail-item" onclick="openGoogleMaps()">
+                                <i class="bi bi-geo-alt"></i>
+                                <span>Club Ciclista Juanicó</span>
+                            </div>
+
+                            <span class="hero-detail-separator">|</span>
+
+                            <div class="hero-detail-item" onclick="addToGoogleCalendar()">
+                                <i class="bi bi-calendar-check"></i>
+                                <span>Sábado 10 de mayo de 2025</span>
+                            </div>
+
+                            <span class="hero-detail-separator">|</span>
+
+                            <div class="hero-detail-item">
+                                <i class="bi bi-clock"></i>
+                                <span>13:00 a 18:00 hs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scroll-indicator animate__animated animate__fadeInUp animate__delay-3s" onclick="scrollToNextSection()">
+                    <span>Descubre más</span>
+                    <i class="bi bi-chevron-double-down"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seccion Countdown -->
+        <section id="countdown" class="countdown">
+
+
+            <div class="countdown-info animate__animated animate__fadeInUp animate__delay-1s">
+                <h2 class="countdown-info-title">¡La cuenta regresiva ha comenzado!</h2>
+                <p class="countdown-info-text">
+                    Faltan solo unos instantes para una tarde mágica llena de juegos, risas y mucha diversión 🎉
+                </p>
+                <div class="countdown-container">
+                    <div class="countdown-item">
+                        <span id="countdown-days" class="countdown-number">00</span>
+                        <span class="countdown-label">Días</span>
+                    </div>
+
+                    <div class="countdown-item">
+                        <span id="countdown-hours" class="countdown-number">00</span>
+                        <span class="countdown-label">Horas</span>
+                    </div>
+
+                    <div class="countdown-item">
+                        <span id="countdown-minutes" class="countdown-number">00</span>
+                        <span class="countdown-label">Minutos</span>
+                    </div>
+
+                    <div class="countdown-item">
+                        <span id="countdown-seconds" class="countdown-number">00</span>
+                        <span class="countdown-label">Segundos</span>
+                    </div>
+                </div>
+                <div class="countdown-info-cta" onclick="scrollToPrincipalSection()">
+                    <p>¡Sigue bajando para descubrir más sobre esta gran aventura!</p>
+                    <i class="bi bi-arrow-down-circle-fill bounce-icon"></i>
+                </div>
+            </div>
+
+            <div id="countdown-message" class="countdown-message" style="display: none;">
+                ¡Ya empezó la fiesta!
+            </div>
+        </section>
+
+        <!-- Seccion Principal -->
+        <section id="principal" class="principal">
+            <div class="principal-container">
+                <!-- Tarjeta de Detalles -->
+                <div class="principal-card detalles-card animate__animated animate__fadeInUp">
+                    <h3 class="card-title">Detalles de la Fiesta</h3>
+                    <div class="detalles-content">
+                        <div class="detalle-item">
+                            <i class="bi bi-calendar-heart"></i>
+                            <span>Sábado 10 de mayo de 2025</span>
+                        </div>
+                        <div class="detalle-item">
+                            <i class="bi bi-clock-fill"></i>
+                            <span>13:00 a 18:00 hs</span>
+                        </div>
+                        <div class="detalle-item">
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <span>Club Ciclista Juanicó</span>
+                        </div>
+                        <p class="detalle-mensaje animate__animated animate__pulse animate__infinite">
+                            ¡Prepárate para una tarde mágica!
+                        </p>
+                    </div>
+                </div>
+            
+                <!-- Tarjeta de Ubicación -->
+                <div class="principal-card ubicacion-card animate__animated animate__fadeInUp animate__delay-1s">
+                    <h3 class="card-title">¿Dónde nos encontramos?</h3>
+                    <div class="ubicacion-content">
+                        <div class="mapa-container">
+                            <img src="public/mapa-placeholder.jpg" alt="Ubicación Club Ciclista Juanicó" class="mapa-imagen">
+                        </div>
+                        <button class="ubicacion-btn" onclick="openGoogleMaps()">
+                            <i class="bi bi-map"></i>
+                            Ver en Google Maps
+                        </button>
+                    </div>
+                </div>
+            
+                <!-- Tarjeta de Confirmación -->
+                <div class="principal-card confirmacion-card animate__animated animate__fadeInUp animate__delay-2s">
+                    <h3 class="card-title">Confirmar Asistencia</h3>
+                    <div class="confirmacion-content">
+                        <p class="confirmacion-mensaje">¡Queremos verte allí!</p>
+                        <p class="confirmacion-submensaje">Confírmanos tu asistencia por WhatsApp</p>
+                        <button class="whatsapp-btn" onclick="openWhatsAppConfirmation()">
+                            <i class="bi bi-whatsapp"></i>
+                            Confirmar Asistencia
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Botón Sobre Mí -->
+        <div class="sobre-mi-btn animate__animated animate__fadeInUp animate__delay-3s" onclick="openModalSobre()">
+            <i class="bi bi-person-heart"></i>
+            <span>Sobre Mí</span>
+        </div>
+        
+        <div id="modal-container"></div>
+    </body>
+</html>
+
+
+Contenido del archivo JavaScript: js/particlespropio.js
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize particles only if the element exists
+    const particlesElement = document.getElementById('particles-js');
+    
+    if (particlesElement) {
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 280,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: "#ffffff"
+                },
+                shape: {
+                    type: "image",
+                    stroke: {
+                        width: 0,
+                        color: "#000000"
+                    },
+                    polygon: {
+                        nb_sides: 5
+                    },
+                    image: {
+                        src: "public/daisy.png",
+                        width: 100,
+                        height: 100
+                    }
+                },
+                opacity: {
+                    value: 0.5,
+                    random: true,
+                    anim: {
+                        enable: false,
+                        speed: 1,
+                        opacity_min: 0.1,
+                        sync: false
+                    }
+                },
+                size: {
+                    value: 10,
+                    random: true,
+                    anim: {
+                        enable: false,
+                        speed: 40,
+                        size_min: 0.1,
+                        sync: false
+                    }
+                },
+                line_linked: {
+                    enable: false,
+                    distance: 500,
+                    color: "#ffffff",
+                    opacity: 0.4,
+                    width: 2
+                },
+                move: {
+                    enable: true,
+                    speed: 6,
+                    direction: "bottom",
+                    random: false,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false,
+                    attract: {
+                        enable: false,
+                        rotateX: 600,
+                        rotateY: 1200
+                    }
+                }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: "bubble"
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: "repulse"
+                    },
+                    resize: true
+                },
+                modes: {
+                    grab: {
+                        distance: 400,
+                        line_linked: {
+                            opacity: 0.5
+                        }
+                    },
+                    bubble: {
+                        distance: 400,
+                        size: 4,
+                        duration: 0.3,
+                        opacity: 1,
+                        speed: 3
+                    },
+                    repulse: {
+                        distance: 200,
+                        duration: 0.4
+                    },
+                    push: {
+                        particles_nb: 4
+                    },
+                    remove: {
+                        particles_nb: 2
+                    }
+                }
+            },
+            retina_detect: true
+        });
+    }
+    
+});
+
+Contenido del archivo JavaScript: js/principalnuevo.js
+// Funcionalidad para la sección hero del cumpleaños de Galia
+
+// Función para abrir Google Maps con la ubicación del evento
+function openGoogleMaps() {
+    // Coordenadas del Club Ciclista Juanicó
+    // Nota: Reemplazar estas coordenadas con las reales del lugar
+    const location = "Club+Ciclista+Juanicó";
+    const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${location}`;
+    window.open(mapsUrl, '_blank');
+}
+
+// Función para agregar el evento al Google Calendar
+function addToGoogleCalendar() {
+    // Detalles del evento
+    const eventName = "Cumpleaños de Galia - 1 año";
+    const eventLocation = "Club Ciclista Juanicó";
+    const eventDescription = "¡Acompáñanos a celebrar el primer añito de Galia!";
+    
+    // Fecha y hora (formato ISO)
+    // 10 de mayo de 2025, de 13:00 a 18:00
+    const startDate = "20250510T130000";
+    const endDate = "20250510T180000";
+    
+    // Crear URL para Google Calendar
+    const calendarUrl = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventName)}&dates=${startDate}/${endDate}&details=${encodeURIComponent(eventDescription)}&location=${encodeURIComponent(eventLocation)}&sf=true&output=xml`;
+    
+    window.open(calendarUrl, '_blank');
+}
+
+// Inicialización cuando el DOM está completamente cargado
+document.addEventListener('DOMContentLoaded', function() {
+    // Animaciones adicionales o inicialización de componentes
+    console.log("Página de cumpleaños de Galia cargada correctamente");
+    
+    // Aquí puedes agregar más funcionalidades según sea necesario
+});
+
+
+// Función para desplazarse a la siguiente sección
+function scrollToNextSection() {
+    const nextSection = document.getElementById('countdown');
+    if (nextSection) {
+        nextSection.scrollIntoView({ 
+            behavior: 'smooth' 
+        });
+    }
+}
+
+function scrollToPrincipalSection() {
+    const principalSection = document.getElementById('principal');
+    if (principalSection) {
+        principalSection.scrollIntoView({ 
+            behavior: 'smooth' 
+        });
+    }
+}
+
+Contenido del archivo JavaScript: js/countdown.js
+// Fecha del evento (10 de mayo de 2025 a las 13:00 hora de Uruguay GMT-3)
+const EVENT_DATE = new Date('2025-05-10T13:00:00-03:00');
+
+// Elementos del DOM
+const countdownElements = {
+    days: document.getElementById('countdown-days'),
+    hours: document.getElementById('countdown-hours'),
+    minutes: document.getElementById('countdown-minutes'),
+    seconds: document.getElementById('countdown-seconds')
+};
+
+const countdownContainer = document.querySelector('.countdown-container');
+const countdownMessage = document.getElementById('countdown-message');
+const countdownInfo = document.querySelector('.countdown-info');
+
+// Función para calcular el tiempo restante
+function getTimeRemaining() {
+    const now = new Date();
+    const difference = EVENT_DATE - now;
+    
+    // Si ya pasó la fecha del evento
+    if (difference < 0) {
+        return {
+            expired: true,
+            days: 0,
+            hours: 0,
+            minutes: 0,
+            seconds: 0
+        };
+    }
+    
+    // Cálculos de tiempo
+    return {
+        expired: false,
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / (1000 * 60)) % 60),
+        seconds: Math.floor((difference / 1000) % 60)
+    };
+}
+
+// Función para actualizar el contador en el DOM
+function updateCountdown() {
+    const time = getTimeRemaining();
+    
+    if (time.expired) {
+        // Mostrar mensaje de evento iniciado y ocultar información
+        countdownContainer.style.display = 'none';
+        countdownInfo.style.display = 'none';
+        countdownMessage.style.display = 'block';
+        clearInterval(countdownInterval);
+        return;
+    }
+    
+    // Actualizar cada elemento con padding de ceros
+    Object.keys(countdownElements).forEach(unit => {
+        countdownElements[unit].textContent = String(time[unit]).padStart(2, '0');
+    });
+}
+
+// Iniciar el contador y actualizarlo cada segundo
+updateCountdown();
+const countdownInterval = setInterval(updateCountdown, 1000);
+
+// Evento para limpiar el intervalo cuando se cierre la página
+window.addEventListener('beforeunload', () => {
+    clearInterval(countdownInterval);
+});
+
+Contenido del archivo JavaScript: js/principaldetalle.js
+// Función para abrir Google Maps con la ubicación del Club
+function openGoogleMaps() {
+    const location = "Club+Ciclista+Juanicó";
+    const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${location}`;
+    window.open(mapsUrl, '_blank');
+}
+
+// Función para abrir WhatsApp con mensaje preescrito
+function confirmarPorWhatsApp() {
+    const mensaje = "¡Hola! Quiero confirmar mi asistencia al cumpleaños de Galia 🎉";
+    const telefono = "+598XXXXXXXX"; // Reemplazar con el número real
+    const whatsappUrl = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+    window.open(whatsappUrl, '_blank');
+}
+
+// Animaciones al hacer scroll
+document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate__fadeInUp');
+                entry.target.style.opacity = '1';
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    document.querySelectorAll('.principal-card').forEach(card => {
+        card.style.opacity = '0';
+        observer.observe(card);
+    });
+});
+
+Contenido del archivo JavaScript: js/modalconfirmar.js
+document.addEventListener('DOMContentLoaded', () => {
+    const modalContainer = document.getElementById('modal-container');
+    
+    // Ensure the modal container exists before adding event listeners
+    if (modalContainer) {
+        // Add event listener to close modal when clicking outside
+        modalContainer.addEventListener('click', (e) => {
+            if (e.target === modalContainer) {
+                closeModal();
+            }
+        });
+
+        // Ensure the WhatsApp confirmation function is globally accessible
+        window.openWhatsAppConfirmation = function() {
+            if (modalContainer) {
+                modalContainer.style.display = 'flex';
+                
+                // Populate the modal content dynamically
+                modalContainer.innerHTML = `
+                    <div class="modal">
+                        <button class="close-modal" onclick="closeModal()" aria-label="Cerrar modal">×</button>
+                        <h3>¡Nos encantaría que vengas! 😊</h3>
+                        <p>Por favor, ingresa tu nombre y la cantidad de personas que asistirán al cumpleaños de Galia.</p>
+                        
+                        <label for="name">Tu Nombre</label>
+                        <input type="text" id="name" placeholder="Ej: Familia González" required>
+                        
+                        <label for="people-count">Cantidad de Personas</label>
+                        <input type="number" id="people-count" placeholder="1" min="1" required>
+                        
+                        <div class="modal-buttons">
+                            <button id="cancel-btn" class="cancel-btn" onclick="closeModal()">Cancelar</button>
+                            <button id="confirm-btn" class="action-btn" onclick="confirmAndSendWhatsApp()">Confirmar y Enviar WhatsApp</button>
+                        </div>
+                    </div>
+                `;
+            }
+        };
+
+        // Function to close the modal
+        window.closeModal = function() {
+            if (modalContainer) {
+                modalContainer.style.display = 'none';
+            }
+        };
+
+        // Function to confirm and send WhatsApp message
+        window.confirmAndSendWhatsApp = function() {
+            const name = document.getElementById('name');
+            const peopleCount = document.getElementById('people-count');
+
+            if (name && peopleCount && name.value && peopleCount.value) {
+                const message = `¡Hola! Soy ${name.value} y confirmo la asistencia de ${peopleCount.value} persona(s) al cumpleaños de Galia.`;
+                const encodedMessage = encodeURIComponent(message);
+                const phoneNumber = '59892475455';
+                
+                window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+                closeModal();
+            } else {
+                alert('Por favor, completa todos los campos.');
+            }
+        };
+    }
+});
+
+Contenido del archivo JavaScript: js/modalsobremi.js
+document.addEventListener('DOMContentLoaded', () => {
+    window.openModalSobre = function() {
+        const contentHTML = `
+            <h2 class="modal-title">¡Hola! Soy Galia 💖</h2>
+            
+            <div class="modal-section">
+                <h3>Bebé</h3>
+                <p>Nací el <strong>10 de mayo de 2024</strong>.</p>
+                <p>Ahora mido <strong>72 cm</strong> y peso <strong>10 kg</strong>.</p>
+                <p>¡Me dicen que soy una gordita preciosa! 🥰</p>
+            </div>
+
+            <div class="modal-section">
+                <h3>Juguetes</h3>
+                <p>Me encanta jugar con juguetes, aunque <strong>¡prefiero cajas y tuppers!</strong> 📦</p>
+            </div>
+
+            <div class="modal-section">
+                <h3>Ropa</h3>
+                <p>Mi Mamá me viste <strong>facherísima</strong> (¡Papá todavía está aprendiendo! 🤭).</p>
+            </div>
+
+            <div class="modal-section">
+                <h3>Árboles</h3>
+                <p>Amo pasear, mirar los árboles y, si nadie me ve, ¡arrancar alguna hojita! 🍃</p>
+            </div>
+
+            <div class="modal-section">
+                <h3>Curiosidad</h3>
+                <p>Soy muy curiosa, ¡me encanta explorar todo lo que me rodea! 🔍</p>
+            </div>
+
+            <div class="modal-section">
+                <h3>Sonrisas</h3>
+                <p>Siempre estoy sonriendo, mostrando mis dientitos y repartiendo muchos besos. 😘</p>
+            </div>
+
+            <div class="modal-section">
+                <h3>Regalo (Opcional)</h3>
+                <p>Lo más importante para mí es compartir momentos juntos. 💕</p>
+                <p>Pero si deseas hacer un regalito especial, te compartimos estos datos:</p>
+                <ul class="bank-details">
+                    <li><strong>Banco:</strong> BROU</li>
+                    <li><strong>Titular:</strong> Mauro Prestes</li>
+                    <li><strong>Número de Cuenta:</strong> 001782901-00001</li>
+                    <li><strong>Moneda:</strong> Pesos Uruguayos ($)</li>
+                </ul>
+                <p class="gift-message">¡Tu presencia sigue siendo el mejor regalo! 🎁</p>
+            </div>
+        `;
+        openModal(contentHTML);
+    };
+});
+
+

@@ -1,0 +1,1194 @@
+=== CONTENIDO COMPLETO DEL SITIO WEB ===
+
+===== ARCHIVO HTML =====
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta
+        name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Primary Meta Tags -->
+        <title>Galia cumple 1 año! | Bienvenida</title>
+        <meta name="title" content="Galia cumple 1 año! | Bienvenida">
+        <meta
+        name="description" content="¡Bienvenidos a la aventura de Galia! Acompáñanos en la celebración de su primer año lleno de sonrisas y momentos especiales.">
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://galiacumple1.netlify.app/intro">
+        <meta property="og:title" content="Galia cumple 1 año! | Bienvenida">
+        <meta property="og:description" content="¡Bienvenidos a la aventura de Galia! Acompáñanos en la celebración de su primer año lleno de sonrisas y momentos especiales.">
+        <meta
+        property="og:image" content="https://galiacumple1.netlify.app/img/galia-share.jpg">
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="https://galiacumple1.netlify.app/intro">
+        <meta property="twitter:title" content="Galia cumple 1 año! | Bienvenida">
+        <meta property="twitter:description" content="¡Bienvenidos a la aventura de Galia! Acompáñanos en la celebración de su primer año lleno de sonrisas y momentos especiales.">
+        <meta
+        property="twitter:image" content="https://galiacumple1.netlify.app/img/galia-share.jpg">
+
+        <!-- Theme Color -->
+        <meta
+        name="theme-color" content="#ccd5aeff">
+
+        <!-- Favicon and App Icons -->
+        <link rel="icon" type="image/png" sizes="32x32" href="public/favicon/favicon-32x32.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="public/favicon/apple-touch-icon.png">
+        <link
+        rel="manifest" href="public/favicon/site.webmanifest">
+
+        <!-- Preconnect -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+        rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+        <!-- Preload Critical Resources -->
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Nunito:wght@400;700&display=swap" as="style">
+        <link
+        rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" as="style">
+
+        <!-- Styles -->
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+        <link rel="stylesheet" href="css/global.css">
+        <link rel="stylesheet" href="css/principalnuevo.css">
+        <link rel="stylesheet" href="css/countdown.css">
+        <link rel="stylesheet" href="css/principaldetalle.css">
+        <link rel="stylesheet" href="css/modalconfirmar.css">
+        <link
+        rel="stylesheet" href="css/modalsobremi.css">
+
+        <!-- Bootstrap Icons -->
+        <link
+        rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+        <!-- Deferred Scripts -->
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+        <script src="js/particlespropio.js" defer></script>
+        <script src="js/principalnuevo.js" defer></script>
+        <script src="js/countdown.js" defer></script>
+        <script src="js/principaldetalle.js" defer></script>
+        <script src="js/modalconfirmar.js" defer></script>
+        <script src="js/modalsobremi.js" defer></script>
+    </head>
+    <body>
+        <div id="particles-js"></div>
+        <!-- Hero Seccion -->
+        <section id="hero-main" class="hero-section" aria-labelledby="hero-title">
+            <div id="hero-overlay" class="hero-overlay"></div>
+
+            <div id="hero-content-wrapper" class="hero-content">
+                <div class="hero-card animate__animated animate__fadeIn">
+                    <div id="hero-image-container" class="hero-image animate__animated animate__zoomIn">
+                        <img src="public/GaliaHero.svg" alt="Galia en su primer cumpleaños" loading="lazy">
+                        <div class="hero-image-decor"></div>
+                    </div>
+
+                    <div class="hero-text-container">
+                        <h2 id="hero-subtitle" class="animate__animated animate__fadeInUp animate__delay-1s">
+                            ¡Acompáñame a celebrar!
+                        </h2>
+
+                        <h1 id="hero-title" class="animate__animated animate__fadeInUp animate__delay-1s">
+                            Mi primer añito ¡Galia!
+                        </h1>
+
+                        <div class="hero-details-wrapper animate__animated animate__fadeIn animate__delay-2s">
+                            <div class="hero-detail-item" onclick="openGoogleMaps()">
+                                <i class="bi bi-geo-alt"></i>
+                                <span>Club Ciclista Juanicó</span>
+                            </div>
+
+                            <span class="hero-detail-separator">|</span>
+
+                            <div class="hero-detail-item" onclick="addToGoogleCalendar()">
+                                <i class="bi bi-calendar-check"></i>
+                                <span>Sábado 10 de mayo de 2025</span>
+                            </div>
+
+                            <span class="hero-detail-separator">|</span>
+
+                            <div class="hero-detail-item">
+                                <i class="bi bi-clock"></i>
+                                <span>13:00 a 18:00 hs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scroll-indicator animate__animated animate__fadeInUp animate__delay-3s" onclick="scrollToNextSection()">
+                    <span>Descubre más</span>
+                    <i class="bi bi-chevron-double-down"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seccion Countdown -->
+        <section id="countdown" class="countdown">
+
+
+            <div class="countdown-info animate__animated animate__fadeInUp animate__delay-1s">
+                <h2 class="countdown-info-title">¡La cuenta regresiva ha comenzado!</h2>
+                <p class="countdown-info-text">
+                    Faltan solo unos instantes para una tarde mágica llena de juegos, risas y mucha diversión 🎉
+                </p>
+                <div class="countdown-container">
+                    <div class="countdown-item">
+                        <span id="countdown-days" class="countdown-number">00</span>
+                        <span class="countdown-label">Días</span>
+                    </div>
+
+                    <div class="countdown-item">
+                        <span id="countdown-hours" class="countdown-number">00</span>
+                        <span class="countdown-label">Horas</span>
+                    </div>
+
+                    <div class="countdown-item">
+                        <span id="countdown-minutes" class="countdown-number">00</span>
+                        <span class="countdown-label">Minutos</span>
+                    </div>
+
+                    <div class="countdown-item">
+                        <span id="countdown-seconds" class="countdown-number">00</span>
+                        <span class="countdown-label">Segundos</span>
+                    </div>
+                </div>
+                <div class="countdown-info-cta" onclick="scrollToPrincipalSection()">
+                    <p>¡Sigue bajando para descubrir más sobre esta gran aventura!</p>
+                    <i class="bi bi-arrow-down-circle-fill bounce-icon"></i>
+                </div>
+            </div>
+
+            <div id="countdown-message" class="countdown-message" style="display: none;">
+                ¡Ya empezó la fiesta!
+            </div>
+        </section>
+
+        <!-- Seccion Principal -->
+        <section id="principal" class="principal">
+            <div
+                class="principal-container">
+                <!-- Tarjeta de Detalles -->
+                <div class="principal-card detalles-card animate__animated animate__fadeInUp">
+                    <h3 class="card-title">Detalles de la Fiesta</h3>
+                    <div class="detalles-content">
+                        <div class="detalle-item">
+                            <i class="bi bi-calendar-heart"></i>
+                            <span>Sábado 10 de mayo de 2025</span>
+                        </div>
+                        <div class="detalle-item">
+                            <i class="bi bi-clock-fill"></i>
+                            <span>13:00 a 18:00 hs</span>
+                        </div>
+                        <div class="detalle-item">
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <span>Club Ciclista Juanicó</span>
+                        </div>
+                        <p class="detalle-mensaje animate__animated animate__pulse animate__infinite">
+                            ¡Prepárate para una tarde mágica!
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Ubicación -->
+                <div class="principal-card ubicacion-card animate__animated animate__fadeInUp animate__delay-1s">
+                    <h3 class="card-title">¿Dónde nos encontramos?</h3>
+                    <div class="ubicacion-content">
+                        <div class="mapa-container">
+                            <img src="public/mapa-placeholder.jpg" alt="Ubicación Club Ciclista Juanicó" class="mapa-imagen">
+                        </div>
+                        <button class="ubicacion-btn" onclick="openGoogleMaps()" aria-label="Ver ubicación en Google Maps">
+                            <i class="bi bi-map" aria-hidden="true"></i>
+                            Ver en Google Maps
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Confirmación -->
+                <div class="principal-card confirmacion-card animate__animated animate__fadeInUp animate__delay-2s">
+                    <h3 class="card-title">Confirmar Asistencia</h3>
+                    <div class="confirmacion-content">
+                        <p class="confirmacion-mensaje">¡Queremos verte allí!</p>
+                        <p class="confirmacion-submensaje">Confírmanos tu asistencia por WhatsApp</p>
+                        <button class="whatsapp-btn" onclick="openWhatsAppConfirmation()">
+                            <i class="bi bi-whatsapp"></i>
+                            Confirmar Asistencia
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Botón Sobre Mí -->
+        <div class="sobre-mi-btn animate__animated animate__fadeInUp animate__delay-3s" onclick="openModalSobre()">
+            <i class="bi bi-person-heart"></i>
+            <span>Sobre Mí</span>
+        </div>
+
+        <div id="modal-container"></div>
+    </body>
+</html>
+
+
+===== CSS: css/global.css =====
+:root {
+  --tea-green: #ccd5ae;
+  --beige: #e9edc9;
+  --cornsilk: #fefae0;
+  --papaya-whip: #faedcd;
+  --buff: #d4a373;
+  --primary-color: #ccd5ae;
+  --secondary-color: #e9edc9;
+  --accent-color: #faedcd;
+  --text-color: #4a4a4a;
+  --light-bg: rgba(255, 255, 255, 0.15);
+  --card-bg: rgba(255, 255, 255, 0.25);
+  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: linear-gradient(0deg, var(--tea-green), var(--beige), var(--cornsilk), var(--papaya-whip), var(--buff));
+  color: var(--buff);
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.6;
+  transition: background-color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Baloo 2', cursive;
+  color: var(--buff);
+  line-height: 1.3;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4, h5, h6 { font-size: 1.25rem; }
+
+button {
+  font-family: 'Baloo 2', cursive;
+  cursor: pointer;
+  border: none;
+  padding: 1em 2em;
+  border-radius: 3em;
+  background: var(--buff);
+  color: #fff;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background-color: var(--papaya-whip);
+}
+
+button:focus {
+  outline: 3px solid var(--buff);
+  outline-offset: 2px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--buff);
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--papaya-whip);
+}
+
+.info-card {
+  background: var(--beige);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.info-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.info-label {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--buff);
+}
+
+.info-value {
+  font-size: 1.25rem;
+  color: var(--buff);
+  margin-top: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  button { padding: 0.8em 1.5em; }
+  .container { padding: 0 1rem; }
+  .info-card { padding: 1.5rem; }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 1.5rem; }
+  .info-card { padding: 1rem; }
+}
+
+===== CSS: css/principalnuevo.css =====
+/* Variables de colores y estilos */
+:root {
+    --primary-color: #ccd5ae;
+    --secondary-color: #e9edc9;
+    --accent-color: #faedcd;
+    --light-bg: rgba(255, 255, 255, 0.15);
+    --card-bg: rgba(255, 255, 255, 0.25);
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para la sección hero */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 2rem;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* Estilos para la tarjeta */
+.hero-card {
+    background-color: var(--card-bg);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: var(--card-shadow);
+    max-width: 800px;
+    width: 90%;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-card:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilos para la imagen */
+.hero-image {
+    margin-bottom: 2rem;
+    position: relative;
+    max-width: 100%;
+}
+
+.hero-image img {
+    max-width: 300px;
+    height: auto;
+}
+
+.hero-image-decor {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: radial-gradient(circle at center, rgba(204, 213, 174, 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+/* Estilos para el texto */
+.hero-text-container {
+    margin-bottom: 1rem;
+}
+
+#hero-subtitle {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+#hero-title {
+    font-family: 'Baloo 2', cursive;
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para los detalles del evento */
+.hero-details-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+.hero-detail-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 50px;
+}
+
+.hero-detail-item:hover {
+    color: var(--primary-color);
+    background-color: rgba(204, 213, 174, 0.1);
+}
+
+.hero-detail-separator {
+    color: var(--text-color);
+    opacity: 0.5;
+}
+
+/* Estilos para el indicador de desplazamiento */
+.scroll-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.scroll-indicator span {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.scroll-indicator i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.scroll-indicator:hover {
+    transform: translateY(5px);
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .hero-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    #hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-details-wrapper {
+        flex-direction: column;
+    }
+    
+    .hero-detail-separator {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-card {
+        padding: 1.5rem 1rem;
+    }
+    
+    #hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-image img {
+        max-width: 200px;
+    }
+}
+
+===== CSS: css/countdown.css =====
+/* Contenedor principal del countdown */
+.countdown {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Estilo para cada item del countdown */
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    min-width: 100px;
+    background: rgba(204, 213, 174, 0.2);
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.countdown-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Números del countdown */
+.countdown-number {
+    font-family: 'Baloo 2', cursive;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #4a4a4a;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+/* Etiquetas del countdown */
+.countdown-label {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Mensaje cuando termina el countdown */
+.countdown-message {
+    font-family: 'Baloo 2', cursive;
+    font-size: 2.5rem;
+    color: #4a4a4a;
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease;
+}
+
+/* Bloque de información */
+.countdown-info {
+    margin-top: 3rem;
+    text-align: center;
+    max-width: 800px;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.countdown-info-title {
+    font-family: 'Baloo 2', cursive;
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.countdown-info-text {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.countdown-info-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.bounce-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+    animation: bounceIcon 2s infinite;
+}
+
+@keyframes bounceIcon {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-12px);
+    }
+    60% {
+        transform: translateY(-6px);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .countdown-container {
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .countdown-item {
+        min-width: 80px;
+        padding: 0.8rem;
+    }
+    
+    .countdown-number {
+        font-size: 2.5rem;
+    }
+    
+    .countdown-label {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .countdown-container {
+        gap: 0.5rem;
+        padding: 1rem;
+    }
+    
+    .countdown-item {
+        min-width: 60px;
+        padding: 0.5rem;
+    }
+    
+    .countdown-number {
+        font-size: 2rem;
+    }
+    
+    .countdown-label {
+        font-size: 0.7rem;
+    }
+}
+
+===== CSS: css/principaldetalle.css =====
+/* Variables y configuración general */
+:root {
+    --card-bg: rgba(255, 255, 255, 0.25);
+    --card-border: rgba(255, 255, 255, 0.2);
+    --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    --primary-color: #ccd5ae;
+    --secondary-color: #e9edc9;
+    --accent-color: #faedcd;
+    --text-color: #4a4a4a;
+}
+
+/* Contenedor principal */
+.principal {
+    min-height: 100vh;
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.principal-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Estilos de las tarjetas */
+.principal-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease;
+}
+
+.principal-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-title {
+    font-family: 'Baloo 2', cursive;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para la tarjeta de detalles */
+.detalles-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.detalle-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.1rem;
+}
+
+.detalle-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.detalle-mensaje {
+    text-align: center;
+    font-family: 'Baloo 2', cursive;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-top: 1.5rem;
+}
+
+/* Estilos para la tarjeta de ubicación */
+.mapa-container {
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.mapa-imagen {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.ubicacion-btn {
+    width: 100%;
+    padding: 1rem;
+    background: var(--primary-color);
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.ubicacion-btn:hover {
+    background: #bbc79e;
+}
+
+/* Estilos para la tarjeta de confirmación */
+.confirmacion-content {
+    text-align: center;
+}
+
+.confirmacion-mensaje {
+    font-family: 'Baloo 2', cursive;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.confirmacion-submensaje {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+
+.whatsapp-btn {
+    width: 100%;
+    padding: 1rem;
+    background: #25D366;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    background: #128C7E;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .principal-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .confirmacion-card {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .principal {
+        padding: 3rem 1.5rem;
+    }
+    
+    .principal-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .confirmacion-card {
+        grid-column: auto;
+    }
+    
+    .card-title {
+        font-size: 1.5rem;
+    }
+}
+
+===== CSS: css/modalconfirmar.css =====
+/* Estilos para el modal de confirmación */
+#modal-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 20px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    font-family: 'Nunito', sans-serif;
+    animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-family: 'Baloo 2', cursive;
+    font-size: 1.8rem;
+}
+
+.modal p {
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+
+.modal label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.modal input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1.5rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.modal input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(250, 237, 205, 0.3);
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.cancel-btn, .action-btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cancel-btn {
+    background-color: #f0f0f0;
+    color: var(--text-color);
+}
+
+.action-btn {
+    background-color: var(--primary-color);
+    color: white;
+    flex: 1;
+}
+
+.cancel-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.action-btn:hover {
+    background-color: #bbc79e;
+}
+
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 0.5rem;
+    line-height: 1;
+}
+
+.close-modal:hover {
+    color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .modal {
+        padding: 1.5rem;
+        width: 95%;
+    }
+    
+    .modal-buttons {
+        flex-direction: column;
+    }
+    
+    .cancel-btn, .action-btn {
+        width: 100%;
+    }
+}
+
+===== CSS: css/modalsobremi.css =====
+/* Contenedor principal del modal */
+#modal-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    overflow-y: auto;
+}
+
+/* Contenido del modal */
+.modal.sobre-mi-modal {
+    background-color: #fffbea;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 1rem;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: fadeInUp 0.4s ease forwards;
+    font-family: 'Baloo 2', cursive;
+    color: #333;
+}
+
+/* Título del modal */
+.modal.sobre-mi-modal .modal-title {
+    text-align: center;
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    color: #8e44ad;
+}
+
+/* Cada sección dentro del modal */
+.modal.sobre-mi-modal .modal-section {
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.modal.sobre-mi-modal .modal-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+/* Subtítulos de cada sección */
+.modal.sobre-mi-modal .modal-section h3 {
+    font-size: 1.2rem;
+    color: #6c5ce7;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+/* Párrafos */
+.modal.sobre-mi-modal p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+}
+
+/* Negritas personalizadas */
+.modal.sobre-mi-modal strong {
+    color: #2d3436;
+    font-weight: 700;
+}
+
+/* Lista de datos bancarios */
+.modal.sobre-mi-modal .bank-details {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0.5rem;
+}
+
+.modal.sobre-mi-modal .bank-details li {
+    margin-bottom: 0.4rem;
+    font-size: 0.95rem;
+}
+
+/* Mensaje final del regalo */
+.modal.sobre-mi-modal .gift-message {
+    font-style: italic;
+    color: #bdc3c7;
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+/* Botón de cierre */
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #aaa;
+    transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+    color: #555;
+}
+
+/* Animación del modal */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    .modal.sobre-mi-modal {
+        padding: 1.5rem;
+    }
+
+    .modal.sobre-mi-modal .modal-title {
+        font-size: 1.4rem;
+    }
+
+    .modal.sobre-mi-modal .modal-section h3 {
+        font-size: 1rem;
+    }
+}
+

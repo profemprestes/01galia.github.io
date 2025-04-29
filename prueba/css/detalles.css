@@ -1,0 +1,134 @@
+/* Details Section Styles */
+.principal {
+  min-height: 100vh;
+  padding: 4rem 2rem;
+}
+
+.principal-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.principal-card {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;
+}
+
+/* Estilos para el contenido de las tarjetas */
+.detalles-content,
+.ubicacion-content,
+.confirmacion-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+/* Estilos para los títulos de las tarjetas */
+.principal-card h3 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+/* Estilos específicos para los detalles */
+.detalle-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.detalle-mensaje {
+  margin-top: auto;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Estilos para los botones */
+.ubicacion-btn,
+.whatsapp-btn {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 10px;
+  border: none;
+  background: var(--primary-color);
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.ubicacion-btn:hover,
+.whatsapp-btn:hover {
+  background: #bbc79e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el contenido de confirmación */
+.confirmacion-content {
+  text-align: center;
+}
+
+.confirmacion-content p:first-child {
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.confirmacion-content p:nth-child(2) {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.1rem;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+}
+
+.whatsapp-btn {
+  background: #25D366;
+}
+
+.whatsapp-btn:hover {
+  background: #128C7E;
+}
+
+/* Estilos para los íconos en los botones */
+.ubicacion-btn i,
+.whatsapp-btn i {
+  font-size: 1.2rem;
+}
+
+/* Estilos para el contenedor del mapa */
+.mapa-container {
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .principal {
+    padding: 3rem 1.5rem;
+  }
+  
+  .principal-card {
+    min-height: 350px;
+  }
+}

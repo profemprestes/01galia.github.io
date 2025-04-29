@@ -1,0 +1,221 @@
+/* Estilos del botón de mensaje flotante */
+.message-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    padding: 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    background: var(--primary-color);
+    border: none;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    z-index: 900;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.message-btn i {
+    font-size: 1.5rem;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.message-btn span {
+    position: absolute;
+    right: 3.5rem;
+    white-space: nowrap;
+    color: white;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: all 0.3s ease;
+    font-family: 'Nunito', sans-serif;
+    pointer-events: none;
+}
+
+/* Efectos hover del botón */
+.message-btn:hover {
+    border-radius: 25px;
+    padding-left: 7rem;
+    background: var(--accent-color);
+}
+
+.message-btn:hover i {
+    transform: scale(1.1);
+}
+
+.message-btn:hover span {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Estilos del modal de mensaje */
+.modal-message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.modal-message.active {
+    display: flex;
+}
+
+.modal-message-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    animation: modalFadeIn 0.3s ease;
+}
+
+.modal-message-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.modal-message-title {
+    font-family: 'Baloo 2', cursive;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.modal-message-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+    padding: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.modal-message-close:hover {
+    transform: rotate(90deg);
+}
+
+.modal-message-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 0.8rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    font-family: 'Nunito', sans-serif;
+    resize: vertical;
+}
+
+.form-group textarea {
+    min-height: 120px;
+}
+
+.modal-message-submit {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 10px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.modal-message-submit:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+/* Animación del modal */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .message-btn {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        padding: 0.8rem;
+    }
+
+    .message-btn i {
+        font-size: 1.2rem;
+    }
+
+    .message-btn:hover {
+        padding-left: 6rem;
+    }
+
+    .modal-message-content {
+        width: 95%;
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+
+    .modal-message-title {
+        font-size: 1.3rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 0.6rem;
+    }
+}
+
+/* Ajustes para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .message-btn span {
+        display: none;
+    }
+
+    .message-btn:hover {
+        padding-left: 1rem;
+        border-radius: 50%;
+    }
+
+    .modal-message-content {
+        padding: 1rem;
+    }
+
+    .form-group textarea {
+        min-height: 100px;
+    }
+}

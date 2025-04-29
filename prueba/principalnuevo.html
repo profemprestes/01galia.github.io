@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galia cumple 1 año! | Bienvenida</title>
+    <meta name="description" content="¡Bienvenidos a la aventura de Galia! Acompáñanos en la celebración de su primer año lleno de sonrisas y momentos especiales.">
+    <meta property="og:title" content="Galia cumple 1 año! | Bienvenida">
+    <meta property="og:description" content="¡Bienvenidos a la aventura de Galia! Acompáñanos...">
+    <meta property="og:image" content="https://galiacumple1.netlify.app/img/galia-share.jpg">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#ccd5ae">
+
+    <link rel="icon" href="public/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="apple-touch-icon" href="public/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="public/favicon/site.webmanifest">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/principalnuevo.css">
+    <link rel="stylesheet" href="css/countdown.css">
+    <link rel="stylesheet" href="css/principaldetalle.css">
+    <link rel="stylesheet" href="css/modalconfirmar.css">
+    <link rel="stylesheet" href="css/modalsobremi.css">
+</head>
+<body class="light-theme">
+    <div id="particles-js" aria-hidden="true"></div>
+    
+    <!-- Hero Section -->
+    <section id="hero-main" class="hero-section" aria-labelledby="hero-title">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-card animate__animated animate__fadeIn">
+                <div class="hero-image animate__animated animate__zoomIn">
+                    <img src="public/GaliaHero.svg" alt="Galia en su primer cumpleaños" loading="lazy">
+                    <div class="hero-image-decor" aria-hidden="true"></div>
+                </div>
+                <div class="hero-text-container">
+                    <h2 class="animate__animated animate__fadeInUp animate__delay-1s">¡Acompáñame a celebrar!</h2>
+                    <h1 id="hero-title" class="animate__animated animate__fadeInUp animate__delay-1s">Mi primer añito ¡Galia!</h1>
+                    <div class="hero-details-wrapper animate__animated animate__fadeIn animate__delay-2s">
+                        <div class="hero-detail-item" onclick="utils.openGoogleMaps()" role="button" tabindex="0" aria-label="Ver ubicación del evento">
+                            <i class="bi bi-geo-alt" aria-hidden="true"></i>
+                            <span>Club Ciclista Juanicó</span>
+                        </div>
+                        <span class="hero-detail-separator" aria-hidden="true">|</span>
+                        <div class="hero-detail-item" onclick="utils.addToGoogleCalendar()" role="button" tabindex="0" aria-label="Agregar al calendario">
+                            <i class="bi bi-calendar-check" aria-hidden="true"></i>
+                            <span>Sábado 10 de mayo de 2025</span>
+                        </div>
+                        <span class="hero-detail-separator" aria-hidden="true">|</span>
+                        <div class="hero-detail-item" aria-label="Hora del evento">
+                            <i class="bi bi-clock" aria-hidden="true"></i>
+                            <span>13:00 a 18:00 hs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator animate__animated animate__fadeInUp animate__delay-3s" onclick="utils.scrollTo('countdown')" role="button" tabindex="0" aria-label="Ir a la cuenta regresiva">
+                <span>Descubre más</span>
+                <i class="bi bi-chevron-double-down" aria-hidden="true"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section id="countdown" class="countdown" role="region" aria-labelledby="countdown-title">
+        <div class="countdown-info animate__animated animate__fadeInUp animate__delay-1s">
+            <h2 id="countdown-title" class="countdown-info-title">¡La cuenta regresiva ha comenzado!</h2>
+            <p class="countdown-info-text">Faltan solo unos instantes para una tarde mágica llena de juegos, risas y mucha diversión 🎉</p>
+            <div class="countdown-container" role="timer" aria-live="polite">
+                <div class="countdown-item">
+                    <span id="countdown-days" class="countdown-number">00</span>
+                    <span class="countdown-label">Días</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="countdown-hours" class="countdown-number">00</span>
+                    <span class="countdown-label">Horas</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="countdown-minutes" class="countdown-number">00</span>
+                    <span class="countdown-label">Minutos</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="countdown-seconds" class="countdown-number">00</span>
+                    <span class="countdown-label">Segundos</span>
+                </div>
+            </div>
+            <div class="countdown-info-cta" onclick="utils.scrollTo('principal')" role="button" tabindex="0" aria-label="Ir a la información del evento">
+                <p>¡Sigue bajando para descubrir más sobre esta gran aventura!</p>
+                <i class="bi bi-arrow-down-circle-fill bounce-icon" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div id="countdown-message" style="display:none;">¡Ya empezó la fiesta!</div>
+    </section>
+
+    <!-- Main Content -->
+    <main id="principal" class="principal">
+        <div class="principal-container">
+            <!-- Details Card -->
+            <div class="principal-card detalles-card animate__animated animate__fadeInUp">
+                <h3>Detalles de la Fiesta</h3>
+                <div class="detalles-content">
+                    <div class="detalle-item">
+                        <i class="bi bi-calendar-heart" aria-hidden="true"></i>
+                        <span>Sábado 10 de mayo de 2025</span>
+                    </div>
+                    <div class="detalle-item">
+                        <i class="bi bi-clock-fill" aria-hidden="true"></i>
+                        <span>13:00 a 18:00 hs</span>
+                    </div>
+                    <div class="detalle-item">
+                        <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
+                        <span>Club Ciclista Juanicó</span>
+                    </div>
+                    <p class="detalle-mensaje animate__animated animate__pulse animate__infinite">¡Prepárate para una tarde mágica!</p>
+                </div>
+            </div>
+
+            <!-- Location Card -->
+            <div class="principal-card ubicacion-card animate__animated animate__fadeInUp animate__delay-1s">
+                <h3>¿Dónde nos encontramos?</h3>
+                <div class="ubicacion-content">
+                    <div class="mapa-container">
+                        <img src="public/mapa-placeholder.jpg" alt="Ubicación Club Ciclista Juanicó" loading="lazy">
+                    </div>
+                    <button class="ubicacion-btn" onclick="utils.openGoogleMaps()">Ver en Google Maps</button>
+                </div>
+            </div>
+
+            <!-- Confirmation Card -->
+            <div class="principal-card confirmacion-card animate__animated animate__fadeInUp animate__delay-2s">
+                <h3>Confirmar Asistencia</h3>
+                <div class="confirmacion-content">
+                    <p>¡Queremos verte allí!</p>
+                    <p>Confírmanos tu asistencia por WhatsApp</p>
+                    <button onclick="openWhatsAppConfirmation()" class="whatsapp-btn">Confirmar Asistencia</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Sobre Mí Button -->
+    <div class="sobre-mi-btn animate__animated animate__fadeInUp animate__delay-3s" onclick="openModalSobre()" role="button" tabindex="0" aria-label="Conoce más sobre Galia">
+        <i class="bi bi-person-heart" aria-hidden="true"></i>
+        <span>Sobre Mí</span>
+    </div>
+
+    <!-- Modal Container -->
+    <div id="modal-container" role="dialog" aria-modal="true" tabindex="-1"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="js/particlespropio.js" defer></script>
+    <script src="js/principalnuevo.js" defer></script>
+    <script src="js/countdown.js" defer></script>
+    <script src="js/principaldetalle.js" defer></script>
+    <script src="js/modalconfirmar.js" defer></script>
+    <script src="js/modalsobremi.js" defer></script>
+</body>
+</html>

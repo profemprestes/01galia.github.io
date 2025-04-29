@@ -53,10 +53,11 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
         <link rel="stylesheet" href="css/global.css">
         <link rel="stylesheet" href="css/principalnuevo.css">
-        <link
-        rel="stylesheet" href="css/countdown.css">
+        <link rel="stylesheet" href="css/countdown.css">
         <link rel="stylesheet" href="css/principaldetalle.css">
         <link rel="stylesheet" href="css/modalconfirmar.css">
+        <link
+        rel="stylesheet" href="css/modalsobremi.css">
 
         <!-- Bootstrap Icons -->
         <link
@@ -70,6 +71,7 @@
         <script src="js/countdown.js" defer></script>
         <script src="js/principaldetalle.js" defer></script>
         <script src="js/modalconfirmar.js" defer></script>
+        <script src="js/modalsobremi.js" defer></script>
     </head>
     <body>
         <div id="particles-js"></div>
@@ -166,7 +168,8 @@
 
         <!-- Seccion Principal -->
         <section id="principal" class="principal">
-            <div class="principal-container">
+            <div
+                class="principal-container">
                 <!-- Tarjeta de Detalles -->
                 <div class="principal-card detalles-card animate__animated animate__fadeInUp">
                     <h3 class="card-title">Detalles de la Fiesta</h3>
@@ -188,7 +191,7 @@
                         </p>
                     </div>
                 </div>
-            
+
                 <!-- Tarjeta de Ubicación -->
                 <div class="principal-card ubicacion-card animate__animated animate__fadeInUp animate__delay-1s">
                     <h3 class="card-title">¿Dónde nos encontramos?</h3>
@@ -196,13 +199,13 @@
                         <div class="mapa-container">
                             <img src="public/mapa-placeholder.jpg" alt="Ubicación Club Ciclista Juanicó" class="mapa-imagen">
                         </div>
-                        <button class="ubicacion-btn" onclick="openGoogleMaps()">
-                            <i class="bi bi-map"></i>
+                        <button class="ubicacion-btn" onclick="openGoogleMaps()" aria-label="Ver ubicación en Google Maps">
+                            <i class="bi bi-map" aria-hidden="true"></i>
                             Ver en Google Maps
                         </button>
                     </div>
                 </div>
-            
+
                 <!-- Tarjeta de Confirmación -->
                 <div class="principal-card confirmacion-card animate__animated animate__fadeInUp animate__delay-2s">
                     <h3 class="card-title">Confirmar Asistencia</h3>
@@ -217,6 +220,13 @@
                 </div>
             </div>
         </section>
+
+        <!-- Botón Sobre Mí -->
+        <div class="sobre-mi-btn animate__animated animate__fadeInUp animate__delay-3s" onclick="openModalSobre()">
+            <i class="bi bi-person-heart"></i>
+            <span>Sobre Mí</span>
+        </div>
+
         <div id="modal-container"></div>
     </body>
 </html>

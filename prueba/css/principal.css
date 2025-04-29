@@ -1,0 +1,264 @@
+.hero {
+    text-align: center;
+    padding: 6rem 0 4rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    color: var(--green-tea);
+    margin-bottom: 3rem;
+}
+
+.countdown {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.countdown h2 {
+    font-size: 2rem;
+    color: var(--soft-ochre);
+    margin-bottom: 1rem;
+}
+
+#countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.time-block {
+    background: white;
+    padding: 1rem;
+    border-radius: 1rem;
+    min-width: 100px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.time-block .number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--soft-ochre);
+    display: block;
+}
+
+.time-block .label {
+    font-size: 1rem;
+    color: var(--green-tea);
+}
+
+.details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.detail-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.detail-card i {
+    font-size: 2rem;
+    color: var(--soft-ochre);
+    margin-bottom: 1rem;
+}
+
+.detail-card h3 {
+    color: var(--soft-ochre);
+    margin-bottom: 0.5rem;
+}
+
+.actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 4rem;
+}
+
+.action-btn {
+    background: white;
+    border: 2px solid var(--soft-ochre);
+    color: var(--soft-ochre);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.action-btn:hover {
+    background: var(--soft-ochre);
+    color: white;
+}
+
+.photo-frame {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 8px solid var(--light-peach);
+    border-radius: 50%;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.photo-frame:hover {
+    transform: scale(1.05);
+}
+
+.quick-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 4rem 0;
+    padding: 2rem;
+    background: white;
+    border-radius: 2rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+.info-card {
+    text-align: center;
+}
+
+.map-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: var(--soft-ochre);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.floating-buttons {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.float-btn {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    background: var(--soft-ochre);
+    color: white;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+
+.float-btn:hover {
+    transform: translateY(-4px);
+}
+
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal {
+    max-width: 600px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: white;
+    border-radius: 2rem;
+    padding: 3rem;
+}
+
+.modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.modal input,
+.modal textarea {
+    padding: 1rem;
+    border: 2px solid var(--light-peach);
+    border-radius: 1rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+.modal textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.copy-button {
+    background: var(--green-tea);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--soft-ochre);
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .quick-info {
+        grid-template-columns: 1fr;
+    }
+    
+    .floating-buttons {
+        right: 1rem;
+        bottom: 1rem;
+    }
+    
+    .float-btn {
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.2rem;
+    }
+    
+    #countdown-timer {
+        flex-wrap: wrap;
+    }
+    
+    .time-block {
+        min-width: 80px;
+    }
+}

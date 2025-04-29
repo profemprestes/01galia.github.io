@@ -1,0 +1,207 @@
+/* ===== css/modal.css ===== */
+
+/* Contenedor global de modales */
+#modal-container {
+    display: none;
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Caja del modal */
+  .modal {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 2rem;
+    max-width: 600px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    font-family: 'Nunito', sans-serif;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: modalFadeIn 0.3s ease;
+  }
+  
+  /* Animación de entrada */
+  @keyframes modalFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Botón de cerrar */
+  .close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--text-color);
+    padding: 0.5rem;
+    line-height: 1;
+    transition: color 0.3s ease;
+  }
+  .close-modal:hover {
+    color: var(--primary-color);
+  }
+  
+  /* Títulos dentro del modal (confirmación y "Sobre Mí") */
+  .modal h3,
+  .modal .modal-title {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-family: 'Baloo 2', cursive;
+    font-size: 1.8rem;
+  }
+  
+  /* Texto y párrafos */
+  .modal p {
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Etiquetas e inputs (confirmación) */
+  .modal label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+  }
+  .modal input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1.5rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    font-family: 'Nunito', sans-serif;
+  }
+  .modal input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(250, 237, 205, 0.3);
+  }
+  
+  /* Botonera del modal */
+  .modal-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .cancel-btn,
+  .action-btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  .cancel-btn {
+    background-color: #f0f0f0;
+    color: var(--text-color);
+  }
+  .cancel-btn:hover {
+    background-color: #e0e0e0;
+  }
+  .action-btn {
+    background-color: var(--primary-color);
+    color: #fff;
+    flex: 1;
+  }
+  .action-btn:hover {
+    background-color: #bbc79e;
+  }
+  
+  /* Secciones internas para "Sobre Mí" */
+  .modal-section {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--primary-color);
+  }
+  .modal-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  .modal-section h3 {
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    font-family: 'Baloo 2', cursive;
+  }
+  
+  /* Detalles bancarios (lista) */
+  .bank-details {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+  .bank-details li {
+    margin-bottom: 0.5rem;
+  }
+  .gift-message {
+    font-style: italic;
+    color: var(--text-color);
+    margin-top: 1rem;
+  }
+  
+  /* Botón flotante "Sobre Mí" */
+  .sobre-mi-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 100;
+  }
+  .sobre-mi-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+  .sobre-mi-btn i {
+    font-size: 1.2rem;
+  }
+  
+  /* Ajustes responsivos */
+  @media (max-width: 768px) {
+    .modal {
+      padding: 1.5rem;
+      width: 95%;
+    }
+    .modal-buttons {
+      flex-direction: column;
+    }
+    .cancel-btn,
+    .action-btn {
+      width: 100%;
+    }
+    .sobre-mi-btn {
+      bottom: 1.5rem;
+      right: 1.5rem;
+      padding: 0.6rem 1.2rem;
+    }
+  }
+  

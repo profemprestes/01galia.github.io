@@ -1,0 +1,208 @@
+/* Variables de colores y estilos */
+:root {
+    --primary-color: #ccd5ae;
+    --secondary-color: #e9edc9;
+    --accent-color: #faedcd;
+    --light-bg: rgba(255, 255, 255, 0.15);
+    --card-bg: rgba(255, 255, 255, 0.25);
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para la sección hero */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 2rem;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* Estilos para la tarjeta */
+.hero-card {
+    background-color: var(--card-bg);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: var(--card-shadow);
+    max-width: 800px;
+    width: 90%;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-card:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilos para la imagen */
+.hero-image {
+    margin-bottom: 2rem;
+    position: relative;
+    max-width: 100%;
+}
+
+.hero-image img {
+    max-width: 300px;
+    height: auto;
+}
+
+.hero-image-decor {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: radial-gradient(circle at center, rgba(204, 213, 174, 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+/* Estilos para el texto */
+.hero-text-container {
+    margin-bottom: 1rem;
+}
+
+#hero-subtitle {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+#hero-title {
+    font-family: 'Baloo 2', cursive;
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para los detalles del evento */
+.hero-details-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+.hero-detail-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 50px;
+}
+
+.hero-detail-item:hover {
+    color: var(--primary-color);
+    background-color: rgba(204, 213, 174, 0.1);
+}
+
+.hero-detail-separator {
+    color: var(--text-color);
+    opacity: 0.5;
+}
+
+/* Estilos para el indicador de desplazamiento */
+.scroll-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.scroll-indicator span {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.scroll-indicator i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.scroll-indicator:hover {
+    transform: translateY(5px);
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .hero-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    #hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-details-wrapper {
+        flex-direction: column;
+    }
+    
+    .hero-detail-separator {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-card {
+        padding: 1.5rem 1rem;
+    }
+    
+    #hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-image img {
+        max-width: 200px;
+    }
+}
