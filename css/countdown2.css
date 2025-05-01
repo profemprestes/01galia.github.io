@@ -1,0 +1,208 @@
+/* Variables */
+:root {
+    --countdown-bg: rgba(255, 255, 255, 0.9);
+    --countdown-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    --countdown-text: #2f2f2f;
+    --countdown-accent: #d4a373;
+    --countdown-border: rgba(212, 163, 115, 0.3);
+}
+
+/* Contenedor principal del countdown */
+.countdown {
+    padding: 4rem 2rem;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    background: var(--countdown-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    margin: 2rem auto;
+    max-width: 1000px;
+    width: 90%;
+    box-shadow: var(--countdown-shadow);
+}
+
+/* Título del countdown */
+.countdown h2 {
+    font-family: 'Baloo 2', cursive;
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--countdown-text);
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+}
+
+.countdown h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 4px;
+    background: var(--countdown-accent);
+    border-radius: 2px;
+}
+
+/* Contenedor del timer */
+#countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: nowrap;
+    padding: 1rem;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Bloques de tiempo */
+.time-block {
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    padding: 1rem;
+    border-radius: 20px;
+    flex: 1;
+    min-width: 80px;
+    border: 2px solid var(--countdown-border);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.time-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.time-block:hover::before {
+    transform: translateX(100%);
+}
+
+/* Números del contador */
+.time-block .number {
+    display: block;
+    font-family: 'Baloo 2', cursive;
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    color: var(--countdown-accent);
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* Etiquetas del contador */
+.time-block .label {
+    display: block;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem;
+    color: var(--countdown-text);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+/* Efectos hover */
+.time-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(212, 163, 115, 0.2);
+    border-color: var(--countdown-accent);
+}
+
+.time-block:hover .number {
+    color: var(--countdown-text);
+}
+
+/* Animación para los números cuando cambian */
+@keyframes numberChange {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.number.changed {
+    animation: numberChange 0.5s ease-out;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+    .countdown {
+        padding: 2rem 1rem;
+        margin: 1rem auto;
+    }
+
+    #countdown-timer {
+        gap: 0.5rem;
+    }
+
+    .time-block {
+        padding: 0.8rem;
+    }
+
+    .time-block .number {
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        margin-bottom: 0.3rem;
+    }
+
+    .time-block .label {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .countdown {
+        padding: 1.5rem 0.5rem;
+        width: 98%;
+    }
+
+    #countdown-timer {
+        gap: 0.3rem;
+    }
+
+    .time-block {
+        padding: 0.5rem;
+        min-width: 60px;
+    }
+
+    .time-block .number {
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        margin-bottom: 0.2rem;
+    }
+
+    .time-block .label {
+        font-size: 0.7rem;
+    }
+}
+
+/* Eliminar el grid para pantallas pequeñas */
+@media (max-width: 360px) {
+    #countdown-timer {
+        display: flex;
+        gap: 0.2rem;
+    }
+
+    .time-block {
+        min-width: auto;
+    }
+}
+
+/* Optimizaciones de rendimiento */
+@media (prefers-reduced-motion: reduce) {
+    .time-block {
+        transition: none;
+    }
+
+    .time-block:hover {
+        transform: none;
+    }
+}
